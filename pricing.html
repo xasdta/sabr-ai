@@ -1,245 +1,274 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing & Interactive Enterprise ROI Calculator | Sabr AI by Sabr Systems</title>
-  <meta name="description" content="Explore Sabr Systems' productized B2B engagement tiers—from our $18,500 14-Day Data Readiness Audit Sprint to Turnkey Sabr AI Transformations—and calculate your exact Year-1 ROI." />
+  <title>Pricing &amp; Interactive ROI Calculator | Sabr AI by Sabr Systems</title>
+  <meta name="description" content="Explore Sabr Systems' productized B2B engagement tiers—from our $18,500 14-Day Data Readiness Audit Sprint to Turnkey Sabr AI Transformations—and calculate your Year-1 ROI." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <div class="ambient-bg"></div>
-  <div class="ambient-grid"></div>
-
-  <div class="top-pedigree-bar">
-    <div class="container top-pedigree-inner">
-      <div class="pedigree-pills">
-        <span class="pedigree-pill"><span class="dot"></span> <strong>SABR SYSTEMS</strong> · Enterprise AI Data Engineering</span>
-        <span class="pedigree-pill gold"><span class="dot"></span> <strong>Ivy League</strong> Data &amp; AI Engineers</span>
-        <span class="pedigree-pill"><span class="dot"></span> Deployed at <strong>S&amp;P 500</strong> Scale</span>
-        <span class="pedigree-pill"><span class="dot"></span> <strong>25+ Years</strong> Software &amp; Infrastructure Experience</span>
+<body class="bg-canvas text-ink">
+  <!-- Subtle Top Pedigree Bar -->
+  <div class="border-b border-stone-200/80 bg-stone-100/80 text-xs text-slate-600">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span class="inline-flex items-center gap-1.5 font-semibold text-slate-900">
+          <span class="h-2 w-2 rounded-full bg-teal-600"></span>
+          SABR SYSTEMS
+        </span>
+        <span class="hidden sm:inline text-stone-300">|</span>
+        <span class="font-medium text-slate-700">Ivy League Data &amp; AI Engineers</span>
+        <span class="hidden md:inline text-stone-300">|</span>
+        <span class="hidden md:inline font-medium text-slate-700">Deployed at S&amp;P 500 Scale · 25+ Yrs Infrastructure Experience</span>
       </div>
-      <div>
-        <a href="market-analysis.html" class="mono" style="font-size:0.75rem;color:var(--teal-400);font-weight:600;">
-          See Why This Business Model Wins →
-        </a>
-      </div>
+      <a href="market-analysis.html" class="font-mono text-[11px] font-semibold text-teal-700 hover:text-teal-900 hover:underline">
+        2026 Market &amp; Business Model Report ($31.3B) →
+      </a>
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-mark">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--teal-400)">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+  <!-- Sticky Mobile-First Navigation Header -->
+  <header class="sticky top-0 z-50 border-b border-stone-200/90 bg-[#FAF8F5]/95 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 text-white shadow-sm">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
           </svg>
         </div>
-        <div class="brand-text">
-          <div class="brand-name">SABR AI <span class="brand-badge">by Sabr Systems</span></div>
-          <div class="brand-sub">Enterprise Data Tidying &amp; LLM Intelligence</div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-extrabold tracking-tight text-slate-900">SABR AI</span>
+            <span class="rounded-md border border-teal-200 bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-teal-800">by Sabr Systems</span>
+          </div>
+          <span class="text-[11px] font-medium text-slate-500">Enterprise Data Readiness &amp; LLM Intelligence</span>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="pipeline.html" class="nav-link">The Sabr AI Method</a>
-        <a href="solutions.html" class="nav-link">LLM Reporting &amp; Agents</a>
-        <a href="pricing.html" class="nav-link active">Pricing &amp; ROI</a>
-        <a href="market-analysis.html" class="nav-link">Market Analysis</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex lg:items-center lg:gap-1" aria-label="Primary Navigation">
+        <a href="index.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Overview</a><a href="pipeline.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">The Sabr AI Method</a><a href="solutions.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">LLM Reporting & Agents</a><a href="pricing.html" class="rounded-lg bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-800">Pricing & ROI</a><a href="market-analysis.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Market Study</a><a href="contact.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <button class="theme-toggle" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-        </button>
-        <a href="contact.html" class="btn btn-primary btn-sm">Book 14-Day Data Audit</a>
-        <button class="mobile-menu-btn" aria-label="Open Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
+      <!-- Desktop CTA -->
+      <div class="hidden sm:flex sm:items-center sm:gap-3">
+        <a href="contact.html" class="btn-primary !py-2.5 !px-4 !text-xs sm:!text-sm">
+          Book 14-Day Data Audit
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button (44x44px Touch Target) -->
+      <button id="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Toggle Navigation Menu" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-stone-300 bg-white text-slate-800 shadow-sm lg:hidden">
+        <svg id="menu-icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="menu-icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" class="hidden border-t border-stone-200 bg-white px-4 pt-3 pb-6 shadow-xl lg:hidden">
+      <div class="space-y-1">
+        <a href="index.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Overview</a><a href="pipeline.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">The Sabr AI Method</a><a href="solutions.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">LLM Reporting & Agents</a><a href="pricing.html" class="block rounded-xl bg-teal-50 px-4 py-3 text-base font-bold text-teal-900">Pricing & ROI</a><a href="market-analysis.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Market Study</a><a href="contact.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Contact</a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-2.5">
+        <a href="contact.html" class="btn-primary w-full text-center">
+          Book Your 14-Day Data Readiness Audit →
+        </a>
+        <div class="text-center font-mono text-[11px] text-slate-500">
+          Ivy League Data &amp; AI Engineers · S&amp;P 500 Pedigree
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-section" style="padding-bottom:2rem;">
-      <div class="container">
-        <div class="hero-master-card" style="padding:2.75rem;">
-          <span class="eyebrow-badge">TRANSPARENT PRODUCTIZED B2B PRICING</span>
-          <h1 class="hero-headline" style="margin-top:0.85rem;">
-            High-ROI Engineering Sprints. <span class="text-gradient">Zero Open-Ended Consulting Bloat.</span>
+    <section class="py-8 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-stone-200 bg-white p-6 sm:p-10 lg:p-12 shadow-hero">
+          <span class="badge-pill">TRANSPARENT PRODUCTIZED B2B PRICING</span>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl max-w-4xl">
+            Fixed-Scope Engineering Sprints. <span class="font-serif italic font-normal text-teal-700">Zero Open-Ended Consulting Bloat.</span>
           </h1>
-          <p class="hero-lead" style="max-width:860px;">
-            Hiring an internal team of senior data engineers, ontology architects, and applied AI specialists takes 6–9 months and costs over $850,000/year before a single pipeline ships. Sabr Systems delivers a complete, production-grade Sabr AI transformation in 6 to 10 weeks—starting with a risk-free 14-Day Diagnostic Audit.
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+            Hiring an internal team of senior data engineers, ontology architects, and applied AI specialists takes 6–9 months and costs over $850,000/year before a single pipeline ships. Sabr Systems delivers a complete, production-grade Sabr AI transformation in 6 to 10 weeks—starting with a 14-Day Diagnostic Audit.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 3 Pricing Tiers -->
-    <section class="section" style="padding-top:1rem;">
-      <div class="container">
-        <div class="grid-3 reveal">
+    <!-- 3 Pricing Cards -->
+    <section class="py-6 sm:py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <!-- Tier 1 -->
-          <div class="card pricing-card">
+          <div class="surface-card flex flex-col justify-between">
             <div>
-              <div class="card-step">TIER 01 · THE ENTRY WEDGE</div>
-              <h2 class="card-title">14-Day Data Readiness &amp; Agent Audit Sprint</h2>
-              <div class="price-tag">$18,500</div>
-              <div class="price-sub">Fixed-Fee 2-Week Sprint · 100% Credited Toward Tier 2</div>
-              <p class="card-text" style="margin-top:0.9rem;">
-                Designed to prove immediate value in 10 business days. Our Ivy League engineers audit your data silos, quantify retrieval/schema failure points, and deploy a working Sabr AI PoC on 2 core sources.
+              <span class="badge-pill">TIER 01 · DIAGNOSTIC &amp; POC SPRINT</span>
+              <h2 class="mt-3 text-xl font-bold text-slate-900">14-Day Data Readiness &amp; Agent Audit</h2>
+              <div class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900">$18,500</div>
+              <div class="mt-1 font-mono text-xs text-slate-500">Fixed 2-Week Sprint · 100% Credited Toward Tier 2</div>
+              <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                Designed to prove immediate value in 10 business days. Our Ivy League engineers audit your data silos, quantify retrieval failure points, and deploy a working Sabr AI PoC on 2 core sources.
               </p>
-              <ul class="feature-check-list">
-                <li>✓ <strong>Comprehensive Data Entropy Scorecard</strong> (duplication, nulls, schema drift, OCR quality)</li>
-                <li>✓ <strong>RBAC &amp; Permission Leakage Audit</strong> across vector &amp; SQL targets</li>
-                <li>✓ <strong>Working Live PoC:</strong> 1 structured DB + 1 unstructured repository cleaned, vectorized &amp; connected to an Executive LLM Reporting interface</li>
-                <li>✓ <strong>Board-Ready Architecture &amp; ROI Dossier</strong> with exact fixed-price Tier 2 build roadmap</li>
+              <ul class="mt-5 pt-4 border-t border-stone-100 space-y-2.5 text-sm text-slate-700">
+                <li>✓ <strong>Data Entropy &amp; Hallucination Scorecard</strong> across your stack</li>
+                <li>✓ <strong>Entity Duplication &amp; RBAC Leakage Map</strong></li>
+                <li>✓ <strong>Working Live PoC:</strong> 1 structured DB + 1 unstructured repository cleaned, vectorized &amp; connected to an LLM</li>
+                <li>✓ <strong>Board-Ready Architecture &amp; ROI Blueprint</strong></li>
               </ul>
             </div>
-            <div style="margin-top:1.75rem;">
-              <a href="contact.html?tier=audit" class="btn btn-secondary" style="width:100%;">Start With 14-Day Audit →</a>
+            <div class="mt-6 pt-4">
+              <a href="contact.html?tier=audit" class="btn-secondary w-full text-center">
+                Start With 14-Day Audit →
+              </a>
             </div>
           </div>
 
-          <!-- Tier 2 -->
-          <div class="card pricing-card featured">
+          <!-- Tier 2 (Featured) -->
+          <div class="rounded-2xl border-2 border-teal-700 bg-white p-6 sm:p-8 shadow-elevated flex flex-col justify-between relative">
             <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
-                <div class="card-step">TIER 02 · CORE TRANSFORMATION</div>
-                <span class="brand-badge">HIGHEST ROI</span>
+              <div class="flex items-center justify-between gap-2">
+                <span class="badge-pill">TIER 02 · TURNKEY TRANSFORMATION</span>
+                <span class="rounded-full bg-teal-700 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase text-white">MOST POPULAR</span>
               </div>
-              <h2 class="card-title">Turnkey Sabr AI Foundation &amp; LLM Reporting Build</h2>
-              <div class="price-tag">$75,000 – $140,000</div>
-              <div class="price-sub">6–10 Week Fixed-Deliverable Build Inside Your VPC</div>
-              <p class="card-text" style="margin-top:0.9rem;">
+              <h2 class="mt-3 text-xl font-bold text-slate-900">Sabr AI Core Build &amp; LLM Reporting Suite</h2>
+              <div class="mt-3 text-3xl sm:text-4xl font-extrabold text-teal-800">$75k – $140k</div>
+              <div class="mt-1 font-mono text-xs text-slate-500">6–10 Week Fixed-Deliverable Build in Your VPC</div>
+              <p class="mt-4 text-sm text-slate-600 leading-relaxed">
                 Our flagship engagement. We systematically clean, deduplicate, tag, and vectorize your core enterprise data estate and launch your production Executive AI LLM Reporting &amp; Agent platform.
               </p>
-              <ul class="feature-check-list">
-                <li>✓ <strong>Up to 12 Enterprise Data Sources</strong> (ERP, CRM, Warehouse, SharePoint/PDFs, Slack/Jira)</li>
-                <li>✓ <strong>Probabilistic Entity Resolution</strong> &amp; Golden Customer/Vendor/SKU Master</li>
-                <li>✓ <strong>Governed Semantic Layer (YAML)</strong> + Knowledge Graph ontology</li>
-                <li>✓ <strong>Hybrid Vector + BM25 + Graph Index</strong> with compile-time Okta/Entra RBAC</li>
-                <li>✓ <strong>Custom Executive LLM Reporting App</strong> (Web + Slack/Teams bot with SQL &amp; PDF citations)</li>
-                <li>✓ <strong>500-Query Automated Eval Harness</strong> &amp; full team handoff training</li>
+              <ul class="mt-5 pt-4 border-t border-stone-100 space-y-2.5 text-sm text-slate-700">
+                <li>✓ <strong>Up to 12 Enterprise Data Sources</strong> cleaned &amp; unified</li>
+                <li>✓ <strong>Probabilistic Entity Resolution</strong> &amp; Golden Customer/SKU Master</li>
+                <li>✓ <strong>Governed Semantic Layer (YAML)</strong> + Knowledge Graph</li>
+                <li>✓ <strong>Hybrid Vector + BM25 + Graph Index</strong> with Okta/Entra RBAC</li>
+                <li>✓ <strong>Custom Executive LLM Reporting App</strong> (Web + Slack/Teams)</li>
+                <li>✓ <strong>500-Query Automated Eval Harness</strong> &amp; full team handoff</li>
               </ul>
             </div>
-            <div style="margin-top:1.75rem;">
-              <a href="contact.html?tier=transformation" class="btn btn-primary" style="width:100%;">Scope Your Turnkey Build →</a>
+            <div class="mt-6 pt-4">
+              <a href="contact.html?tier=transformation" class="btn-primary w-full text-center">
+                Scope Your Turnkey Build →
+              </a>
             </div>
           </div>
 
           <!-- Tier 3 -->
-          <div class="card pricing-card">
+          <div class="surface-card flex flex-col justify-between">
             <div>
-              <div class="card-step">TIER 03 · MANAGED STEWARDSHIP</div>
-              <h2 class="card-title">Continuous Data Hygiene &amp; Agent Ops Retainer</h2>
-              <div class="price-tag">$9,500<span style="font-size:1.1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
-              <div class="price-sub">Or $99,000/yr Prepaid · SLA-Backed Engineering</div>
-              <p class="card-text" style="margin-top:0.9rem;">
-                New schemas, new SaaS tools, and new contracts enter your company every week. Sabr Systems acts as your dedicated AI Data Stewardship team to guarantee 99.4%+ accuracy indefinitely.
+              <span class="badge-indigo">TIER 03 · MANAGED STEWARDSHIP</span>
+              <h2 class="mt-3 text-xl font-bold text-slate-900">Continuous Data Hygiene &amp; Agent Ops</h2>
+              <div class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900">$9,500<span class="text-lg font-medium text-slate-500">/mo</span></div>
+              <div class="mt-1 font-mono text-xs text-slate-500">Or $99,000/yr Prepaid · SLA-Backed Engineering</div>
+              <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                New schemas, new SaaS tools, and new contracts enter your company every week. Sabr Systems acts as your dedicated AI Data Stewardship team to maintain 99.4%+ accuracy.
               </p>
-              <ul class="feature-check-list">
-                <li>✓ <strong>24/7 Automated Schema-Drift Detection</strong> &amp; pipeline self-healing</li>
-                <li>✓ <strong>Weekly Retrieval &amp; Hallucination Audits</strong> with prompt/reranker tuning</li>
-                <li>✓ <strong>Up to 2 New Data Sources or Agent Playbooks</strong> integrated every quarter</li>
-                <li>✓ <strong>Monthly Executive Intelligence Tuning</strong> for board &amp; C-suite metrics</li>
-                <li>✓ <strong>Direct Slack Connect Channel</strong> with Sabr Systems Principal Engineers</li>
+              <ul class="mt-5 pt-4 border-t border-stone-100 space-y-2.5 text-sm text-slate-700">
+                <li>✓ <strong>24/7 Automated Schema-Drift</strong> &amp; pipeline self-healing</li>
+                <li>✓ <strong>Weekly Retrieval &amp; Hallucination Audits</strong> (99.4% SLA)</li>
+                <li>✓ <strong>Up to 2 New Data Sources or Agent Playbooks</strong> per quarter</li>
+                <li>✓ <strong>Monthly Executive Intelligence Tuning</strong> for board metrics</li>
+                <li>✓ <strong>Dedicated Principal Engineer</strong> Slack Connect channel</li>
               </ul>
             </div>
-            <div style="margin-top:1.75rem;">
-              <a href="contact.html?tier=retainer" class="btn btn-secondary" style="width:100%;">Inquire About Managed Ops →</a>
+            <div class="mt-6 pt-4">
+              <a href="contact.html?tier=retainer" class="btn-secondary w-full text-center">
+                Inquire About Managed Ops →
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive ROI & Savings Calculator -->
-    <section class="section section-alt" id="roi-calculator">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow-badge gold">INTERACTIVE ROI &amp; PAYBACK SIMULATOR</span>
-          <h2 class="section-title">Calculate Your Annual Engineering &amp; Executive Reporting ROI</h2>
-          <p class="section-subtitle">
-            Adjust the sliders to match your company’s data footprint. Our model uses verified 2026 enterprise benchmarks (44% of senior data/AI engineering hours lost to manual data plumbing &amp; broken RAG debugging).
+    <!-- Interactive ROI Simulator -->
+    <section id="roi-calculator" class="py-12 sm:py-20 bg-[#F3EFEA] border-t border-stone-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-10">
+          <span class="badge-amber">INTERACTIVE ROI &amp; PAYBACK CALCULATOR</span>
+          <h2 class="mt-3 text-2xl font-extrabold text-slate-900 sm:text-4xl">
+            Calculate Your Annual Engineering &amp; Executive Reporting ROI
+          </h2>
+          <p class="mt-3 text-base text-slate-600">
+            Slide the controls below to match your data footprint. Based on 2026 enterprise benchmarks (44% of senior data/AI engineering time lost to manual data plumbing &amp; broken RAG debugging).
           </p>
         </div>
 
-        <div class="roi-calculator-box reveal">
-          <div class="grid-2" style="align-items:center;">
+        <div class="rounded-3xl border border-stone-200 bg-white p-6 sm:p-10 shadow-elevated">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
             <!-- Sliders -->
-            <div>
-              <div class="slider-group">
-                <div class="slider-label-row">
-                  <span>Number of Disconnected Data Silos (ERP, CRM, DBs, Docs)</span>
-                  <span id="roi-sources-val" class="mono" style="color:var(--teal-400);">8 Enterprise Systems</span>
+            <div class="lg:col-span-6 space-y-6">
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800 mb-2">
+                  <span>Disconnected Data Silos (ERP, CRM, DBs, Docs)</span>
+                  <span id="roi-sources-val" class="font-mono text-teal-700">8 Systems</span>
                 </div>
-                <input type="range" id="roi-sources" class="slider-input" min="2" max="30" step="1" value="8" />
+                <input type="range" id="roi-sources" class="sabr-ai-slider" min="2" max="30" step="1" value="8" />
               </div>
 
-              <div class="slider-group">
-                <div class="slider-label-row">
-                  <span>Data, BI &amp; AI Engineers Maintaining Pipelines/Reports</span>
-                  <span id="roi-engineers-val" class="mono" style="color:var(--teal-400);">6 Data / AI Engineers</span>
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800 mb-2">
+                  <span>Data, BI &amp; AI Engineers Maintaining Pipelines</span>
+                  <span id="roi-engineers-val" class="font-mono text-teal-700">6 Engineers</span>
                 </div>
-                <input type="range" id="roi-engineers" class="slider-input" min="1" max="35" step="1" value="6" />
+                <input type="range" id="roi-engineers" class="sabr-ai-slider" min="1" max="35" step="1" value="6" />
               </div>
 
-              <div class="slider-group">
-                <div class="slider-label-row">
-                  <span>Unstructured Document Volume (PDFs, Contracts, Tickets)</span>
-                  <span id="roi-docs-val" class="mono" style="color:var(--teal-400);">50k Unstructured Docs</span>
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800 mb-2">
+                  <span>Unstructured Document Volume (PDFs, Contracts)</span>
+                  <span id="roi-docs-val" class="font-mono text-teal-700">50k Docs</span>
                 </div>
-                <input type="range" id="roi-docs" class="slider-input" min="5" max="500" step="5" value="50" />
+                <input type="range" id="roi-docs" class="sabr-ai-slider" min="5" max="500" step="5" value="50" />
               </div>
 
-              <div class="slider-group" style="margin-bottom:0;">
-                <div class="slider-label-row">
-                  <span>Monthly Executive BI &amp; Internal AI Agent Queries</span>
-                  <span id="roi-queries-val" class="mono" style="color:var(--teal-400);">25k Monthly Agent/LLM Queries</span>
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800 mb-2">
+                  <span>Monthly Executive BI &amp; AI Agent Queries</span>
+                  <span id="roi-queries-val" class="font-mono text-teal-700">25k Queries/mo</span>
                 </div>
-                <input type="range" id="roi-queries" class="slider-input" min="5" max="250" step="5" value="25" />
+                <input type="range" id="roi-queries" class="sabr-ai-slider" min="5" max="250" step="5" value="25" />
               </div>
             </div>
 
-            <!-- Output Metrics Card -->
-            <div style="background:#080D1A;border:1px solid rgba(45,212,191,0.4);border-radius:20px;padding:2rem;color:#F8FAFC;">
-              <div class="mono" style="font-size:0.75rem;color:var(--teal-400);text-transform:uppercase;letter-spacing:0.08em;">
+            <!-- Output Card -->
+            <div class="lg:col-span-6 rounded-2xl border-2 border-teal-700 bg-teal-50/40 p-6 sm:p-8">
+              <div class="font-mono text-xs font-bold uppercase tracking-wider text-teal-800">
                 ESTIMATED ANNUAL VALUE UNLOCKED WITH SABR SYSTEMS
               </div>
-              <div id="roi-out-savings" style="font-size:3rem;font-weight:800;color:#34D399;line-height:1.1;margin:0.5rem 0 1.25rem;">
+              <div id="roi-out-savings" class="mt-2 text-4xl sm:text-5xl font-extrabold text-slate-900">
                 $692,050
               </div>
 
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.25rem;">
-                <div style="background:rgba(15,23,42,0.85);padding:0.8rem;border-radius:10px;border:1px solid rgba(148,163,184,0.18);">
-                  <div class="mono" style="font-size:0.68rem;color:#94A3B8;">ENG TIME RECLAIMED</div>
-                  <div id="roi-out-hours" style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin-top:0.2rem;">5,491 hrs/yr</div>
+              <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div class="rounded-xl border border-stone-200 bg-white p-3.5">
+                  <div class="font-mono text-[10px] font-bold uppercase text-slate-500">ENG HOURS SAVED</div>
+                  <div id="roi-out-hours" class="mt-1 text-base font-extrabold text-slate-900">5,491 hrs/yr</div>
                 </div>
-                <div style="background:rgba(15,23,42,0.85);padding:0.8rem;border-radius:10px;border:1px solid rgba(148,163,184,0.18);">
-                  <div class="mono" style="font-size:0.68rem;color:#94A3B8;">EST. PAYBACK PERIOD</div>
-                  <div id="roi-out-payback" style="font-size:1.05rem;font-weight:700;color:#FBBF24;margin-top:0.2rem;">2.1 Months</div>
+                <div class="rounded-xl border border-stone-200 bg-white p-3.5">
+                  <div class="font-mono text-[10px] font-bold uppercase text-slate-500">EST. PAYBACK</div>
+                  <div id="roi-out-payback" class="mt-1 text-base font-extrabold text-amber-700">2.1 Months</div>
                 </div>
-                <div style="background:rgba(15,23,42,0.85);padding:0.8rem;border-radius:10px;border:1px solid rgba(148,163,184,0.18);">
-                  <div class="mono" style="font-size:0.68rem;color:#94A3B8;">NET RETURN MULTIPLE</div>
-                  <div id="roi-out-multiple" style="font-size:1.05rem;font-weight:700;color:#818CF8;margin-top:0.2rem;">5.7x Year-1 ROI</div>
+                <div class="rounded-xl border border-stone-200 bg-white p-3.5">
+                  <div class="font-mono text-[10px] font-bold uppercase text-slate-500">NET MULTIPLE</div>
+                  <div id="roi-out-multiple" class="mt-1 text-base font-extrabold text-indigo-700">5.7x Year-1 ROI</div>
                 </div>
               </div>
 
-              <div id="roi-recommended-tier" class="mono" style="font-size:0.78rem;color:#A7F3D0;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.35);padding:0.75rem 0.9rem;border-radius:10px;margin-bottom:1.25rem;">
-                Recommended Start: Tier 1 Diagnostic Sprint → Tier 2 Turnkey Sabr AI Transformation
+              <div id="roi-recommended-tier" class="mt-4 rounded-xl border border-teal-200 bg-white p-3.5 font-mono text-xs font-semibold text-teal-900">
+                Recommended Track: Tier 1 Diagnostic Sprint → Tier 2 Turnkey Sabr AI Transformation
               </div>
 
-              <a href="contact.html" class="btn btn-primary" style="width:100%;">
-                Lock In Your Custom ROI Assessment With Sabr Systems →
-              </a>
+              <div class="mt-6">
+                <a href="contact.html" class="btn-primary w-full text-center text-base">
+                  Lock In Your Custom ROI Assessment →
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -247,21 +276,72 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom" style="border-top:none;padding-top:0;">
-        <div>© 2026 Sabr Systems LLC · Sabr AI™ Enterprise AI Data Readiness &amp; LLM Reporting</div>
-        <div style="display:flex;gap:1.25rem;">
-          <a href="index.html">Overview</a>
-          <a href="pipeline.html">Pipeline</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="market-analysis.html">Market Analysis</a>
-          <a href="contact.html">Contact</a>
+  <!-- Clean Editorial Footer -->
+  <footer class="border-t border-stone-200 bg-[#F3EFEA] text-slate-600">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-lg font-extrabold text-slate-900">SABR AI</span>
+              <span class="ml-1.5 rounded border border-teal-300 bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-teal-800">Sabr Systems</span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed max-w-md mb-4">
+            Sabr Systems systematically cleans, deduplicates, tags, and vectorizes fragmented enterprise data—giving your company a governed semantic foundation for accurate AI LLM reporting and production-grade agents.
+          </p>
+          <div class="inline-flex flex-wrap items-center gap-2 rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-800">
+            <span class="text-teal-700">★</span> Ivy League Data &amp; AI Engineers · S&amp;P 500 Track Record · 25+ Yrs Experience
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Architecture</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-teal-700">Flagship Overview</a></li>
+            <li><a href="pipeline.html" class="hover:text-teal-700">4-Stage Data Pipeline</a></li>
+            <li><a href="pipeline.html#ontology" class="hover:text-teal-700">Semantic Metric Layer</a></li>
+            <li><a href="pipeline.html#rbac" class="hover:text-teal-700">Okta/Entra RBAC Vectors</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Solutions &amp; ROI</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="solutions.html" class="hover:text-teal-700">Executive LLM Reporting</a></li>
+            <li><a href="solutions.html#agents" class="hover:text-teal-700">Enterprise AI Agents</a></li>
+            <li><a href="pricing.html" class="hover:text-teal-700">Pricing &amp; ROI Calculator</a></li>
+            <li><a href="market-analysis.html" class="hover:text-teal-700">2026 Market Study</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Direct Engineering</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="contact.html" class="font-semibold text-teal-700 hover:underline">Book 14-Day Data Audit</a></li>
+            <li><a href="mailto:intake@sabrsystems.com" class="hover:text-teal-700">intake@sabrsystems.com</a></li>
+            <li class="text-xs text-slate-500 pt-1">
+              Sabr Systems LLC<br/>New York · San Francisco · Chicago
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-stone-300/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>© 2026 Sabr Systems LLC. All rights reserved. Sabr AI™ is the Enterprise Data Readiness &amp; Agentic BI platform by Sabr Systems.</div>
+        <div class="flex gap-5">
+          <a href="market-analysis.html" class="hover:text-slate-900">Market Dossier</a>
+          <a href="pricing.html" class="hover:text-slate-900">Pricing</a>
+          <a href="contact.html" class="hover:text-slate-900">Security &amp; VPC NDA</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>

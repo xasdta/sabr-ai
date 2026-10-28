@@ -1,283 +1,344 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The 4-Stage Sabr AI Method — Technical Architecture | Sabr AI by Sabr Systems</title>
-  <meta name="description" content="Explore Sabr Systems' 4-stage technical architecture for cleaning, deduplicating, tagging, and vectorizing enterprise data for zero-hallucination AI agents and LLM reporting." />
+  <meta name="description" content="Explore Sabr Systems' 4-stage data engineering pipeline for cleaning, deduplicating, tagging, and vectorizing enterprise data for zero-hallucination AI LLM reporting." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <div class="ambient-bg"></div>
-  <div class="ambient-grid"></div>
-
-  <!-- Top Pedigree Bar -->
-  <div class="top-pedigree-bar">
-    <div class="container top-pedigree-inner">
-      <div class="pedigree-pills">
-        <span class="pedigree-pill"><span class="dot"></span> <strong>SABR SYSTEMS</strong> · Enterprise AI Data Engineering</span>
-        <span class="pedigree-pill gold"><span class="dot"></span> <strong>Ivy League</strong> Data &amp; AI Engineers</span>
-        <span class="pedigree-pill"><span class="dot"></span> Deployed at <strong>S&amp;P 500</strong> Scale</span>
-        <span class="pedigree-pill"><span class="dot"></span> <strong>25+ Years</strong> Software &amp; Infrastructure Experience</span>
+<body class="bg-canvas text-ink">
+  <!-- Subtle Top Pedigree Bar -->
+  <div class="border-b border-stone-200/80 bg-stone-100/80 text-xs text-slate-600">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span class="inline-flex items-center gap-1.5 font-semibold text-slate-900">
+          <span class="h-2 w-2 rounded-full bg-teal-600"></span>
+          SABR SYSTEMS
+        </span>
+        <span class="hidden sm:inline text-stone-300">|</span>
+        <span class="font-medium text-slate-700">Ivy League Data &amp; AI Engineers</span>
+        <span class="hidden md:inline text-stone-300">|</span>
+        <span class="hidden md:inline font-medium text-slate-700">Deployed at S&amp;P 500 Scale · 25+ Yrs Infrastructure Experience</span>
       </div>
-      <div>
-        <a href="contact.html" class="mono" style="font-size:0.75rem;color:var(--teal-400);font-weight:600;">
-          Request Technical Architecture Review →
-        </a>
-      </div>
+      <a href="market-analysis.html" class="font-mono text-[11px] font-semibold text-teal-700 hover:text-teal-900 hover:underline">
+        2026 Market &amp; Business Model Report ($31.3B) →
+      </a>
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-mark">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--teal-400)">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+  <!-- Sticky Mobile-First Navigation Header -->
+  <header class="sticky top-0 z-50 border-b border-stone-200/90 bg-[#FAF8F5]/95 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 text-white shadow-sm">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
           </svg>
         </div>
-        <div class="brand-text">
-          <div class="brand-name">SABR AI <span class="brand-badge">by Sabr Systems</span></div>
-          <div class="brand-sub">Enterprise Data Tidying &amp; LLM Intelligence</div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-extrabold tracking-tight text-slate-900">SABR AI</span>
+            <span class="rounded-md border border-teal-200 bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-teal-800">by Sabr Systems</span>
+          </div>
+          <span class="text-[11px] font-medium text-slate-500">Enterprise Data Readiness &amp; LLM Intelligence</span>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="pipeline.html" class="nav-link active">The Sabr AI Method</a>
-        <a href="solutions.html" class="nav-link">LLM Reporting &amp; Agents</a>
-        <a href="pricing.html" class="nav-link">Pricing &amp; ROI</a>
-        <a href="market-analysis.html" class="nav-link">Market Analysis</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex lg:items-center lg:gap-1" aria-label="Primary Navigation">
+        <a href="index.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Overview</a><a href="pipeline.html" class="rounded-lg bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-800">The Sabr AI Method</a><a href="solutions.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">LLM Reporting & Agents</a><a href="pricing.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Pricing & ROI</a><a href="market-analysis.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Market Study</a><a href="contact.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <button class="theme-toggle" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-        </button>
-        <a href="contact.html" class="btn btn-primary btn-sm">Book 14-Day Data Audit</a>
-        <button class="mobile-menu-btn" aria-label="Open Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
+      <!-- Desktop CTA -->
+      <div class="hidden sm:flex sm:items-center sm:gap-3">
+        <a href="contact.html" class="btn-primary !py-2.5 !px-4 !text-xs sm:!text-sm">
+          Book 14-Day Data Audit
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button (44x44px Touch Target) -->
+      <button id="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Toggle Navigation Menu" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-stone-300 bg-white text-slate-800 shadow-sm lg:hidden">
+        <svg id="menu-icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="menu-icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" class="hidden border-t border-stone-200 bg-white px-4 pt-3 pb-6 shadow-xl lg:hidden">
+      <div class="space-y-1">
+        <a href="index.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Overview</a><a href="pipeline.html" class="block rounded-xl bg-teal-50 px-4 py-3 text-base font-bold text-teal-900">The Sabr AI Method</a><a href="solutions.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">LLM Reporting & Agents</a><a href="pricing.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Pricing & ROI</a><a href="market-analysis.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Market Study</a><a href="contact.html" class="block rounded-xl px-4 py-3 text-base font-medium text-slate-700 hover:bg-stone-100">Contact</a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-2.5">
+        <a href="contact.html" class="btn-primary w-full text-center">
+          Book Your 14-Day Data Readiness Audit →
+        </a>
+        <div class="text-center font-mono text-[11px] text-slate-500">
+          Ivy League Data &amp; AI Engineers · S&amp;P 500 Pedigree
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Page Hero -->
-    <section class="hero-section" style="padding-bottom:2.5rem;">
-      <div class="container">
-        <div class="hero-master-card" style="padding:2.75rem;">
-          <span class="eyebrow-badge">4-STAGE ARCHITECTURAL BLUEPRINT</span>
-          <h1 class="hero-headline" style="margin-top:0.85rem;max-width:960px;">
-            How Sabr Systems Turns <span class="serif-italic" style="color:var(--teal-400);">High-Entropy Data Silos</span> Into Governed Agentic Memory
+    <section class="py-8 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-stone-200 bg-white p-6 sm:p-10 lg:p-12 shadow-hero">
+          <span class="badge-pill">4-STAGE ARCHITECTURAL BLUEPRINT</span>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl max-w-4xl">
+            How Sabr Systems Turns <span class="font-serif italic font-normal text-teal-700">Fragmented Data Silos</span> Into Governed AI Context
           </h1>
-          <p class="hero-lead" style="max-width:860px;">
-            Moving raw tables with Fivetran or dumping PDFs into a vector store is not data readiness. Our Ivy League engineering team deploys a rigorous 4-stage pipeline inside your VPC that resolves entities, compiles business meaning, enforces ACL permissions, and guarantees deterministic LLM reporting.
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+            Moving raw tables with ELT connectors or dumping PDFs into a vector database is not data readiness. Our Ivy League engineering team deploys a rigorous 4-stage pipeline inside your cloud VPC that resolves identities, compiles business metrics, enforces Okta/Entra permissions, and guarantees deterministic LLM reporting.
           </p>
 
-          <!-- Full-Width Animated SVG Architecture Blueprint -->
-          <div style="background:#060A14;border:1px solid rgba(45,212,191,0.35);border-radius:18px;padding:1.5rem;margin-top:1.75rem;overflow-x:auto;">
-            <svg viewBox="0 0 1080 250" width="100%" height="250" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Stage 0: Raw Silos -->
-              <rect x="14" y="20" width="180" height="210" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-opacity="0.55"/>
-              <text x="104" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#FB7185">00 · RAW SILOS</text>
-              <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#CBD5E1">
-                <rect x="28" y="62" width="152" height="30" rx="6" fill="#1E293B"/><text x="104" y="81" text-anchor="middle">SAP / Oracle / NetSuite</text>
-                <rect x="28" y="100" width="152" height="30" rx="6" fill="#1E293B"/><text x="104" y="119" text-anchor="middle">Salesforce / HubSpot / Jira</text>
-                <rect x="28" y="138" width="152" height="30" rx="6" fill="#1E293B"/><text x="104" y="157" text-anchor="middle">PDFs / SharePoint / Drive</text>
-                <rect x="28" y="176" width="152" height="30" rx="6" fill="#1E293B"/><text x="104" y="195" text-anchor="middle">Snowflake / Slack / Email</text>
-              </g>
+          <!-- Mobile-Friendly Responsive Architecture Cards (Stacks vertically on mobile, 5-step flow on desktop) -->
+          <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-4">
+              <div class="font-mono text-[11px] font-bold text-rose-800">00 · RAW SILOS</div>
+              <div class="mt-1 text-sm font-bold text-slate-900">Unstructured &amp; Split</div>
+              <ul class="mt-2 space-y-1 text-xs text-slate-600">
+                <li>• SAP / NetSuite / ERP</li>
+                <li>• Salesforce / HubSpot</li>
+                <li>• PDFs / SharePoint MSAs</li>
+                <li>• Slack / Jira / Snowflake</li>
+              </ul>
+            </div>
 
-              <!-- Arrow 1 -->
-              <path d="M194 125 L238 125" stroke="#2DD4BF" stroke-width="2.5" class="svg-flow-line"/>
+            <div class="rounded-2xl border border-teal-200 bg-teal-50/40 p-4">
+              <div class="font-mono text-[11px] font-bold text-teal-800">01 · CLEAN &amp; RESOLVE</div>
+              <div class="mt-1 text-sm font-bold text-slate-900">Identity &amp; OCR Hygiene</div>
+              <ul class="mt-2 space-y-1 text-xs text-slate-600">
+                <li>• Splink Entity Resolution</li>
+                <li>• Layout-Aware PDF Parser</li>
+                <li>• Stale Draft Quarantine</li>
+                <li>• Golden Customer/SKU IDs</li>
+              </ul>
+            </div>
 
-              <!-- Stage 1: Clean & Dedupe -->
-              <rect x="238" y="20" width="190" height="210" rx="12" fill="#0F172A" stroke="#2DD4BF" stroke-opacity="0.7"/>
-              <text x="333" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#2DD4BF">01 · TIDY &amp; RESOLVE</text>
-              <g font-family="JetBrains Mono, monospace" font-size="10" fill="#E2E8F0">
-                <rect x="252" y="64" width="162" height="36" rx="6" fill="#132338"/><text x="333" y="86" text-anchor="middle">Splink Entity Resolution</text>
-                <rect x="252" y="110" width="162" height="36" rx="6" fill="#132338"/><text x="333" y="132" text-anchor="middle">Layout-Aware PDF Parser</text>
-                <rect x="252" y="156" width="162" height="36" rx="6" fill="#132338"/><text x="333" y="178" text-anchor="middle">Stale Draft Quarantine</text>
-              </g>
+            <div class="rounded-2xl border border-indigo-200 bg-indigo-50/40 p-4">
+              <div class="font-mono text-[11px] font-bold text-indigo-800">02 · TAG &amp; ONTOLOGY</div>
+              <div class="mt-1 text-sm font-bold text-slate-900">Semantic Meaning</div>
+              <ul class="mt-2 space-y-1 text-xs text-slate-600">
+                <li>• YAML Metric Compiler</li>
+                <li>• Knowledge Graph Edges</li>
+                <li>• PII/PHI Redaction Tags</li>
+                <li>• Temporal Validity Locks</li>
+              </ul>
+            </div>
 
-              <!-- Arrow 2 -->
-              <path d="M428 125 L472 125" stroke="#2DD4BF" stroke-width="2.5" class="svg-flow-line"/>
+            <div class="rounded-2xl border border-amber-200 bg-amber-50/40 p-4">
+              <div class="font-mono text-[11px] font-bold text-amber-800">03 · VECTOR + RBAC</div>
+              <div class="mt-1 text-sm font-bold text-slate-900">Governed Retrieval</div>
+              <ul class="mt-2 space-y-1 text-xs text-slate-600">
+                <li>• Dense + BM25 + Graph</li>
+                <li>• Okta/Entra ACL Pre-Filter</li>
+                <li>• Hierarchical Chunking</li>
+                <li>• Real-Time CDC Sync</li>
+              </ul>
+            </div>
 
-              <!-- Stage 2: Semantic Tagging & Ontology -->
-              <rect x="472" y="20" width="190" height="210" rx="12" fill="#0F172A" stroke="#818CF8" stroke-opacity="0.8"/>
-              <text x="567" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#818CF8">02 · TAG &amp; ONTOLOGY</text>
-              <g font-family="JetBrains Mono, monospace" font-size="10" fill="#E2E8F0">
-                <rect x="486" y="64" width="162" height="36" rx="6" fill="#1B1F3B"/><text x="567" y="86" text-anchor="middle">YAML Semantic Metric Spec</text>
-                <rect x="486" y="110" width="162" height="36" rx="6" fill="#1B1F3B"/><text x="567" y="132" text-anchor="middle">Knowledge Graph Edges</text>
-                <rect x="486" y="156" width="162" height="36" rx="6" fill="#1B1F3B"/><text x="567" y="178" text-anchor="middle">PII/PHI &amp; Temporal Tags</text>
-              </g>
-
-              <!-- Arrow 3 -->
-              <path d="M662 125 L706 125" stroke="#818CF8" stroke-width="2.5" class="svg-flow-line"/>
-
-              <!-- Stage 3: Hybrid Vector + RBAC -->
-              <rect x="706" y="20" width="180" height="210" rx="12" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.8"/>
-              <text x="796" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#FBBF24">03 · VECTOR + RBAC</text>
-              <g font-family="JetBrains Mono, monospace" font-size="10" fill="#E2E8F0">
-                <rect x="720" y="64" width="152" height="36" rx="6" fill="#272016"/><text x="796" y="86" text-anchor="middle">Dense + BM25 + Graph</text>
-                <rect x="720" y="110" width="152" height="36" rx="6" fill="#272016"/><text x="796" y="132" text-anchor="middle">Okta/Entra ACL Filter</text>
-                <rect x="720" y="156" width="152" height="36" rx="6" fill="#272016"/><text x="796" y="178" text-anchor="middle">Real-Time CDC Sync</text>
-              </g>
-
-              <!-- Arrow 4 -->
-              <path d="M886 125 L926 125" stroke="#34D399" stroke-width="2.5" class="svg-flow-line"/>
-
-              <!-- Stage 4: Executive LLM Reporting & Agents -->
-              <rect x="926" y="20" width="140" height="210" rx="12" fill="#064E3B" fill-opacity="0.45" stroke="#34D399" stroke-width="2"/>
-              <text x="996" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700" fill="#34D399">04 · AI OUTPUTS</text>
-              <g font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700" fill="#ECFDF5">
-                <rect x="938" y="66" width="116" height="44" rx="7" fill="#065F46"/><text x="996" y="92" text-anchor="middle">LLM Reporting</text>
-                <rect x="938" y="120" width="116" height="44" rx="7" fill="#1E1B4B"/><text x="996" y="146" text-anchor="middle">MCP AI Agents</text>
-                <rect x="938" y="174" width="116" height="38" rx="7" fill="#0F172A"/><text x="996" y="197" text-anchor="middle" fill="#6EE7B7" font-size="9.5">99.4% Cited SLA</text>
-              </g>
-            </svg>
+            <div class="rounded-2xl border-2 border-teal-600 bg-teal-50/80 p-4">
+              <div class="font-mono text-[11px] font-bold text-teal-900">04 · AI OUTPUTS</div>
+              <div class="mt-1 text-sm font-bold text-slate-900">Verified Intelligence</div>
+              <ul class="mt-2 space-y-1 text-xs font-medium text-teal-950">
+                <li>✓ Executive LLM Reporting</li>
+                <li>✓ 99.4% Cited SQL + Docs</li>
+                <li>✓ Production MCP Agents</li>
+                <li>✓ Zero Permission Leaks</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Deep-Dive into the 4 Engineering Stages -->
-    <section class="section">
-      <div class="container">
-        <div class="grid-2 reveal" style="margin-bottom:2.25rem;">
-          <div class="card">
-            <div class="card-step">STAGE 01 · DATA HYGIENE &amp; ENTITY RESOLUTION</div>
-            <h2 class="card-title" style="font-size:1.55rem;">1. Purge, Deduplicate &amp; Parse</h2>
-            <p class="card-text">
-              Before a single token is embedded, Sabr Systems runs probabilistic entity resolution and layout-aware document parsing across your entire corpus. We eliminate the "Garbage In" that causes 73% of RAG failures.
+    <!-- Detailed 4 Stages -->
+    <section class="py-10 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="surface-card">
+            <span class="badge-pill">STAGE 01 · DATA HYGIENE &amp; ENTITY RESOLUTION</span>
+            <h2 class="mt-3 text-xl sm:text-2xl font-bold text-slate-900">1. Purge, Deduplicate &amp; Parse</h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Before a single token is embedded, Sabr Systems runs probabilistic entity resolution and layout-aware document parsing across your entire corpus—eliminating the upstream noise that causes 73% of RAG failures.
             </p>
-            <ul class="feature-check-list">
-              <li>✓ <strong>Cross-System Golden Records:</strong> Links <code>Acme Corp</code> in Salesforce, <code>ACME_INC_09</code> in SAP, and <code>#ext-acme</code> in Slack under a single deterministic UUID.</li>
-              <li>✓ <strong>Layout-Aware Table &amp; PDF Extraction:</strong> Preserves multi-page financial tables, footnotes, and bounding-box coordinates from scanned MSAs and invoices.</li>
-              <li>✓ <strong>Temporal &amp; Supersession Hygiene:</strong> Automatically flags superseded 2023/2024 drafts so agents only retrieve currently effective policies and pricing schedules.</li>
+            <ul class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-sm text-slate-700">
+              <li><strong class="text-slate-900">✓ Cross-System Golden Records:</strong> Links <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">Acme Corp</code> in Salesforce, <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">ACME_INC_09</code> in SAP, and <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">#ext-acme</code> in Slack under one deterministic UUID.</li>
+              <li><strong class="text-slate-900">✓ Layout-Aware Table &amp; PDF Extraction:</strong> Preserves multi-page financial tables, footnotes, and bounding-box coordinates from scanned MSAs and invoices.</li>
+              <li><strong class="text-slate-900">✓ Temporal &amp; Supersession Hygiene:</strong> Automatically quarantines expired drafts so LLMs only retrieve active policies and pricing schedules.</li>
             </ul>
           </div>
 
-          <div class="card" id="ontology">
-            <div class="card-step" style="color:var(--indigo-400);">STAGE 02 · SEMANTIC LAYER &amp; ONTOLOGY</div>
-            <h2 class="card-title" style="font-size:1.55rem;">2. Tagging, Taxonomy &amp; Governed Metrics</h2>
-            <p class="card-text">
+          <div class="surface-card" id="ontology">
+            <span class="badge-indigo">STAGE 02 · SEMANTIC LAYER &amp; ONTOLOGY</span>
+            <h2 class="mt-3 text-xl sm:text-2xl font-bold text-slate-900">2. Tagging, Taxonomy &amp; Governed Metrics</h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
               Vector similarity alone cannot calculate Net Revenue Retention or join five ERP tables. We engineer a formal semantic layer and knowledge graph that compiles business questions into deterministic SQL + contextual prose.
             </p>
-            <ul class="feature-check-list">
-              <li>✓ <strong>Canonical Metric Definitions:</strong> Single version-controlled YAML specification for ARR, Gross Margin, Churn, and Inventory Days across every department.</li>
-              <li>✓ <strong>Automated Metadata Enrichment:</strong> Every chunk is tagged with <code>domain</code>, <code>effective_date</code>, <code>confidentiality_tier</code>, and <code>source_authority_score</code>.</li>
-              <li>✓ <strong>Entity-Relationship Knowledge Graph:</strong> Maps how suppliers, SKUs, plants, contracts, and GL accounts connect across structured and unstructured silos.</li>
+            <ul class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-sm text-slate-700">
+              <li><strong class="text-slate-900">✓ Canonical Metric Definitions:</strong> Single version-controlled YAML specification for ARR, Gross Margin, Churn, and Inventory Days across every department.</li>
+              <li><strong class="text-slate-900">✓ Automated Metadata Enrichment:</strong> Every chunk is tagged with <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">domain</code>, <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">effective_date</code>, <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">confidentiality_tier</code>, and authority score.</li>
+              <li><strong class="text-slate-900">✓ Entity-Relationship Knowledge Graph:</strong> Maps how suppliers, SKUs, plants, contracts, and GL accounts connect across structured and unstructured silos.</li>
             </ul>
           </div>
-        </div>
 
-        <div class="grid-2 reveal">
-          <div class="card" id="rbac">
-            <div class="card-step" style="color:var(--amber-400);">STAGE 03 · HYBRID VECTORIZATION &amp; SECURITY</div>
-            <h2 class="card-title" style="font-size:1.55rem;">3. Context-Aware Vectorization &amp; Zero-Leak RBAC</h2>
-            <p class="card-text">
+          <div class="surface-card" id="rbac">
+            <span class="badge-amber">STAGE 03 · HYBRID VECTORIZATION &amp; SECURITY</span>
+            <h2 class="mt-3 text-xl sm:text-2xl font-bold text-slate-900">3. Context-Aware Vectorization &amp; Zero-Leak RBAC</h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
               We replace naive fixed-size chunking with hierarchical parent-child embeddings, hybrid lexical + dense + graph retrieval, and compile-time identity enforcement synced with Okta, Azure Entra ID, or AWS IAM.
             </p>
-            <ul class="feature-check-list">
-              <li>✓ <strong>Hierarchical Semantic Chunking:</strong> Preserves document section headers and parent context on every child vector so meaning is never orphaned.</li>
-              <li>✓ <strong>Compile-Time ACL Pre-Filtering:</strong> User permissions are evaluated <em>before</em> vector retrieval and SQL compilation—preventing HR or executive data leaks.</li>
-              <li>✓ <strong>Event-Driven CDC Streaming:</strong> Kafka/Debezium &amp; webhook listeners re-index modified records and revoke permissions in under 5 seconds.</li>
+            <ul class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-sm text-slate-700">
+              <li><strong class="text-slate-900">✓ Hierarchical Semantic Chunking:</strong> Preserves document section headers and parent context on every child vector so meaning is never orphaned.</li>
+              <li><strong class="text-slate-900">✓ Compile-Time ACL Pre-Filtering:</strong> User permissions are evaluated <em>before</em> vector retrieval and SQL compilation—preventing HR or executive data leaks.</li>
+              <li><strong class="text-slate-900">✓ Event-Driven CDC Streaming:</strong> Real-time listeners re-index modified records and revoke permissions in under 5 seconds.</li>
             </ul>
           </div>
 
-          <div class="card">
-            <div class="card-step" style="color:var(--emerald-400);">STAGE 04 · AGENTIC BI &amp; OBSERVABILITY</div>
-            <h2 class="card-title" style="font-size:1.55rem;">4. Executive LLM Reporting &amp; Continuous Eval Harness</h2>
-            <p class="card-text">
-              Once your data is tidied, we expose it through our Executive LLM Reporting Suite and standardized MCP/OpenAPI endpoints so your internal agents and leadership team get instant, cited answers.
+          <div class="surface-card">
+            <span class="badge-pill">STAGE 04 · AGENTIC BI &amp; OBSERVABILITY</span>
+            <h2 class="mt-3 text-xl sm:text-2xl font-bold text-slate-900">4. Executive LLM Reporting &amp; Continuous Eval Harness</h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Once your data is structured, we expose it through our Executive LLM Reporting Suite and standardized MCP/OpenAPI endpoints so your internal agents and leadership team get instant, cited answers.
             </p>
-            <ul class="feature-check-list">
-              <li>✓ <strong>Conversational Executive BI:</strong> Ask complex multi-hop questions in Slack, Teams, or Web and receive verified charts, SQL lineage, and PDF page citations.</li>
-              <li>✓ <strong>CI/CD Retrieval Evaluation Suite:</strong> Every pipeline update is tested against 500+ golden question-answer pairs for precision, recall, and faithfulness.</li>
-              <li>✓ <strong>Model-Agnostic Routing:</strong> Works seamlessly with Claude, OpenAI, DeepSeek, Gemini, or self-hosted Llama/Qwen models inside your VPC.</li>
+            <ul class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-sm text-slate-700">
+              <li><strong class="text-slate-900">✓ Conversational Executive BI:</strong> Ask complex multi-hop questions in Slack, Teams, or Web and receive verified charts, SQL lineage, and PDF page citations.</li>
+              <li><strong class="text-slate-900">✓ CI/CD Retrieval Evaluation Suite:</strong> Every pipeline update is tested against 500+ golden question-answer pairs for precision, recall, and faithfulness.</li>
+              <li><strong class="text-slate-900">✓ Model-Agnostic Routing:</strong> Works seamlessly with Claude, OpenAI, DeepSeek, Gemini, or self-hosted Llama/Qwen models inside your VPC.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Before vs After Code & Schema Comparison -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow-badge">UNDER THE HOOD</span>
-          <h2 class="section-title">What an AI Agent Actually Sees: Raw Chunk vs. Sabr AI Semantic Object</h2>
-          <p class="section-subtitle">
-            See why LLMs hallucinate on standard RAG chunks—and why they achieve 99.4% accuracy on Sabr Systems’ structured Sabr AI artifacts.
-          </p>
+    <!-- Code Artifact Comparison -->
+    <section class="py-12 sm:py-16 bg-[#F3EFEA] border-t border-stone-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-10">
+          <span class="badge-pill">UNDER THE HOOD</span>
+          <h2 class="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            What Your AI Agent Sees: Raw Vector Chunk vs. Sabr AI Context Artifact
+          </h2>
         </div>
 
-        <div class="grid-2 reveal">
-          <div class="card" style="background:#080D1A;border-color:rgba(244,63,94,0.4);">
-            <div class="mono" style="font-size:0.75rem;color:#FB7185;margin-bottom:0.75rem;font-weight:700;">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div class="rounded-2xl border border-rose-200 bg-white p-5 sm:p-6 shadow-soft">
+            <div class="font-mono text-xs font-bold text-rose-800 mb-3">
               ✗ BEFORE SABR AI: NAIVE 512-TOKEN VECTOR CHUNK
             </div>
-            <pre class="mono" style="font-size:0.78rem;color:#FDA4AF;white-space:pre-wrap;line-height:1.55;">{
+            <pre class="rounded-xl bg-slate-900 text-rose-200 p-4 font-mono text-xs overflow-x-auto leading-relaxed">{
   "chunk_id": "doc_8821_part_14",
-  "text": "...shall be adjusted by 8.5% if quarterly volume exceeds 40,000 units in Region B. See Schedule C for excluded SKUs...",
+  "text": "...shall be adjusted by 8.5% if quarterly volume exceeds 40,000 units in Region B...",
   "metadata": {
     "source": "SharePoint/Legal/scan_final_v2.pdf"
   }
 }
-// PROBLEM:
-// 1. Which customer or supplier contract is this? Unknown.
-// 2. Is this contract active or expired in 2024? Unknown.
-// 3. What is "Region B" or "Schedule C" in SAP ERP? Unlinked.
-// 4. Who is allowed to read this clause? Unrestricted.</pre>
+// FAILURE MODES:
+// 1. Customer/Supplier identity unknown
+// 2. Contract expiration status unknown
+// 3. Unlinked to SAP ERP SKU or Region codes
+// 4. Zero Okta RBAC access control tags</pre>
           </div>
 
-          <div class="card" style="background:#080D1A;border-color:rgba(45,212,191,0.45);">
-            <div class="mono" style="font-size:0.75rem;color:#34D399;margin-bottom:0.75rem;font-weight:700;">
+          <div class="rounded-2xl border-2 border-teal-600 bg-white p-5 sm:p-6 shadow-soft">
+            <div class="font-mono text-xs font-bold text-teal-800 mb-3">
               ✓ AFTER SABR AI: SABR SYSTEMS GOVERNED CONTEXT ARTIFACT
             </div>
-            <pre class="mono" style="font-size:0.78rem;color:#A7F3D0;white-space:pre-wrap;line-height:1.55;">{
+            <pre class="rounded-xl bg-slate-900 text-teal-200 p-4 font-mono text-xs overflow-x-auto leading-relaxed">{
   "sabr-ai_uri": "sabr-ai://golden_acct/acme_bio_01/msa_2026_q3#sec_4_2",
   "canonical_entity_id": "ENT-ACME-00192",
-  "erp_join_keys": { "sap_kunner": "001009910", "sfdc_id": "0018Y00002z9" },
-  "temporal_validity": { "status": "ACTIVE_SIGNED", "effective_from": "2026-07-01" },
+  "erp_join_keys": { "sap_kunnr": "001009910", "sfdc_id": "0018Y00002z9" },
+  "temporal_validity": { "status": "ACTIVE_SIGNED", "effective": "2026-07-01" },
   "rbac_policy": { "allowed_groups": ["role:finance_exec", "role:revops"] },
-  "semantic_metrics": { "rebate_pct": 0.085, "threshold_units": 40000, "region": "US_MIDWEST" },
-  "verified_text": "Acme Biologics LLC receives an 8.5% volume rebate when US Midwest (Region B) quarterly volume exceeds 40,000 units across SKU family BIO-400.",
+  "semantic_metrics": { "rebate_pct": 0.085, "threshold_units": 40000 },
+  "verified_summary": "Acme Biologics LLC receives an 8.5% volume rebate when US Midwest quarterly volume exceeds 40,000 units (SKU BIO-400).",
   "provenance_hash": "sha256:9f84c2e1... (Page 4, Table 2)"
 }</pre>
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="contact.html" class="btn btn-primary btn-lg">Schedule a Live Technical Walkthrough With Our Principal Engineers →</a>
+        <div class="mt-10 text-center">
+          <a href="contact.html" class="btn-primary text-base">
+            Book a Technical Architecture Walkthrough →
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom" style="border-top:none;padding-top:0;">
-        <div>© 2026 Sabr Systems LLC · Sabr AI™ Enterprise AI Data Readiness &amp; LLM Reporting</div>
-        <div style="display:flex;gap:1.25rem;">
-          <a href="index.html">Overview</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="pricing.html">Pricing &amp; ROI</a>
-          <a href="market-analysis.html">Market Analysis</a>
-          <a href="contact.html">Contact</a>
+  <!-- Clean Editorial Footer -->
+  <footer class="border-t border-stone-200 bg-[#F3EFEA] text-slate-600">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-lg font-extrabold text-slate-900">SABR AI</span>
+              <span class="ml-1.5 rounded border border-teal-300 bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-teal-800">Sabr Systems</span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed max-w-md mb-4">
+            Sabr Systems systematically cleans, deduplicates, tags, and vectorizes fragmented enterprise data—giving your company a governed semantic foundation for accurate AI LLM reporting and production-grade agents.
+          </p>
+          <div class="inline-flex flex-wrap items-center gap-2 rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-800">
+            <span class="text-teal-700">★</span> Ivy League Data &amp; AI Engineers · S&amp;P 500 Track Record · 25+ Yrs Experience
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Architecture</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-teal-700">Flagship Overview</a></li>
+            <li><a href="pipeline.html" class="hover:text-teal-700">4-Stage Data Pipeline</a></li>
+            <li><a href="pipeline.html#ontology" class="hover:text-teal-700">Semantic Metric Layer</a></li>
+            <li><a href="pipeline.html#rbac" class="hover:text-teal-700">Okta/Entra RBAC Vectors</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Solutions &amp; ROI</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="solutions.html" class="hover:text-teal-700">Executive LLM Reporting</a></li>
+            <li><a href="solutions.html#agents" class="hover:text-teal-700">Enterprise AI Agents</a></li>
+            <li><a href="pricing.html" class="hover:text-teal-700">Pricing &amp; ROI Calculator</a></li>
+            <li><a href="market-analysis.html" class="hover:text-teal-700">2026 Market Study</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Direct Engineering</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="contact.html" class="font-semibold text-teal-700 hover:underline">Book 14-Day Data Audit</a></li>
+            <li><a href="mailto:intake@sabrsystems.com" class="hover:text-teal-700">intake@sabrsystems.com</a></li>
+            <li class="text-xs text-slate-500 pt-1">
+              Sabr Systems LLC<br/>New York · San Francisco · Chicago
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-stone-300/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>© 2026 Sabr Systems LLC. All rights reserved. Sabr AI™ is the Enterprise Data Readiness &amp; Agentic BI platform by Sabr Systems.</div>
+        <div class="flex gap-5">
+          <a href="market-analysis.html" class="hover:text-slate-900">Market Dossier</a>
+          <a href="pricing.html" class="hover:text-slate-900">Pricing</a>
+          <a href="contact.html" class="hover:text-slate-900">Security &amp; VPC NDA</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
