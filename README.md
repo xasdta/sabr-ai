@@ -1,4 +1,4 @@
-# Sabr AI by Sabr Systems — We Get Your Company's Data Ready for AI LLMs, Reporting & Corporate Automation
+# Sabr AI — We Get Your Company's Data Ready for AI LLMs, Reporting & Corporate Automation
 
 **End-to-End AI Data Readiness, High-Speed Analytical Architecture & Turnkey AI Agents**
 

@@ -67,7 +67,7 @@ function initHeroVisualizer() {
     });
 
     if (badge) {
-      if (state === 'sabr-ai') {
+      if (state === 'sabrai') {
         badge.textContent = 'AI-READY ARCHITECTURE · SUB-SECOND QUERIES';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-800';
       } else {
@@ -296,9 +296,9 @@ function initContactForms() {
         notes: formData.get('project_notes') || ''
       };
 
-      const existing = JSON.parse(localStorage.getItem('sabr_sabr-ai_leads') || '[]');
+      const existing = JSON.parse(localStorage.getItem('sabr_ai_leads') || '[]');
       existing.unshift(submission);
-      localStorage.setItem('sabr_sabr-ai_leads', JSON.stringify(existing));
+      localStorage.setItem('sabr_ai_leads', JSON.stringify(existing));
 
       const complexityScore = Math.min(98, 74 + (sources.length * 4));
       const feedbackBox = form.querySelector('.form-submission-result');
@@ -348,7 +348,7 @@ function initContactForms() {
 }
 
 window.downloadIntakeBrief = function(refId) {
-  const leads = JSON.parse(localStorage.getItem('sabr_sabr-ai_leads') || '[]');
+  const leads = JSON.parse(localStorage.getItem('sabr_ai_leads') || '[]');
   const item = leads.find(l => l.id === refId) || leads[0];
   if (!item) return;
   const blob = new Blob([JSON.stringify(item, null, 2)], { type: 'application/json' });
