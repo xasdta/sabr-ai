@@ -3,7 +3,7 @@
 
 **Prepared:** October 2026  
 **Company:** Sabr Systems LLC  
-**Team Pedigree:** Ivy League Data & AI Engineers · S&P 500 Experience · 25+ Years Collective Software, Database & Infrastructure Experience
+**Team Pedigree:** Senior Data & AI Engineers · S&P 500 Experience · 25+ Years Collective Software, Database & Infrastructure Experience
 
 ---
 

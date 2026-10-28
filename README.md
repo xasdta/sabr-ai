@@ -3,7 +3,7 @@
 **End-to-End AI Data Readiness, High-Speed Analytical Architecture & Turnkey AI Agents**
 
 > **Provided by Sabr Systems LLC**  
-> Built by **Ivy League Data & AI Engineers** · **S&P 500 Experience** · **25+ Years Collective Software, Database & Infrastructure Experience**
+> Built by **Senior Data & AI Engineers** · **S&P 500 Experience** · **25+ Years Collective Software, Database & Infrastructure Experience**
 
 ---
 
