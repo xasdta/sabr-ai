@@ -1,6 +1,6 @@
 /* ==========================================================================
-   SABR AI by SABR SYSTEMS — Plain-English Mobile-First Interactive Logic
-   We Clean & Organize Your Company's Databases & Documents So AI Works
+   SABR AI by SABR SYSTEMS — Database Field Mapping & AI Agent Reporting Logic
+   We Map & Define Your Database Fields So AI Agents Can Use Your Data
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,7 +42,7 @@ function initMobileNav() {
   });
 }
 
-/* 2. Hero Card — Before (Messy Databases & Docs) vs. After (Clean & AI-Ready) Toggle */
+/* 2. Hero Card — Before (Disjointed, Undefined Tables) vs. After (Mapped & AI-Ready) Toggle */
 function initHeroVisualizer() {
   const buttons = document.querySelectorAll('.hero-state-btn');
   const panels = document.querySelectorAll('.hero-state-panel');
@@ -67,10 +67,10 @@ function initHeroVisualizer() {
 
     if (badge) {
       if (state === 'sabr-ai') {
-        badge.textContent = 'ORGANIZED & VERIFIED · READY FOR AI';
+        badge.textContent = 'FIELDS MAPPED & DEFINED · AI AGENT READY';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-800';
       } else {
-        badge.textContent = 'MESSY DATABASES & DOCS · AI GUESSES WRONG';
+        badge.textContent = 'DISJOINTED TABLES · AI CANNOT UNDERSTAND';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-rose-800';
       }
     }
@@ -83,62 +83,62 @@ function initHeroVisualizer() {
   });
 }
 
-/* 3. Interactive Business Questions Sandbox (Strictly Databases & Documents) */
+/* 3. Interactive AI Agent Reporting Demo (Focused on Mapping Disjointed Database Fields) */
 const SANDBOX_SCENARIOS = {
   margin: {
-    question: '“Why did our profit margin drop 2.4% last quarter, and which client contracts or vendor agreements caused it?”',
-    dirtySource: 'Company Financial Database + 400 Scanned PDF Vendor Contracts + Pricing Tables',
-    dirtyOutput: '“Based on your Q1 database tables, profit margin looks steady around 34%. Shipping or vendor costs may have gone up, but I cannot match the scanned PDF agreements to your database rows.”',
-    dirtyError: 'WHY STANDARD AI FAILED: Read an outdated Q1 report document instead of the active Q3 contract PDF, and could not connect pricing tables in PDFs to your database records.',
-    cleanSource: 'Connected & Cleaned: Financial Database + Signed PDF Contracts + Pricing Tables',
-    cleanRule: 'Matched 412 Signed PDF Contracts to Database Records · Verified Active Dates',
-    cleanOutput: '“Q3 profit margin dropped 2.4% (from 36.8% to 34.4%) for two exact reasons: (1) A 1.65% increase from cold-storage surcharges in the signed Carrier Contract PDF (dated Aug 14, page 4), and (2) 0.75% from unbilled rush discounts recorded in your Q3 Orders Database for Acme Health.”',
+    question: '“Why did our Q3 net margin drop 2.4% in the Midwest region, and which product lines drove the change?”',
+    dirtySource: 'Raw Tables: TBL_ORD_HDR, INV_COST_99, GL_POST_V2, REG_MAP_OLD',
+    dirtyOutput: '“I found columns named AMT_1, AMT_2, and NET_VAL_B across three tables, but there is no definition of whether freight adjustments (ADJ_CD=7) are subtracted from gross revenue. Estimated margin is somewhere between 29.1% and 38.4%.”',
+    dirtyError: 'WHY THE AI AGENT FAILED: Cryptic column names (AMT_1 vs NET_VAL_B), undocumented status codes (ADJ_CD=7), and no defined join path between your orders table and your general ledger table.',
+    cleanSource: 'Sabr AI Mapped Layer: Orders Table ↔ Product Cost Table ↔ Regional Ledger (All Fields Defined)',
+    cleanRule: 'Mapped `NET_VAL_B` → Verified Net Revenue | Linked `ORD_HDR.LOC_ID` → `REG_MAP.Region_Name` | Defined `ADJ_CD=7` → Cold-Chain Freight Surcharge',
+    cleanOutput: '“Midwest Q3 net margin dropped 2.42% (from 36.80% to 34.38%) driven by two mapped factors: (1) -1.65% from cold-chain freight surcharges (`ADJ_CD=7` in `GL_POST_V2`) on Product Line BIO-400 in Chicago and Detroit, and (2) -0.77% from promotional tier discounts (`DISC_TIER_3`) in `TBL_ORD_HDR`.”',
     cleanMetrics: [
-      { label: 'Reason #1 (PDF Contract)', val: '-1.65% (Aug 14 Contract PDF, p.4)' },
-      { label: 'Reason #2 (Orders Database)', val: '-0.75% (Unbilled Rush Discounts)' },
-      { label: 'Answer Accuracy', val: '99.6% · Links to Exact Records' }
+      { label: 'Tables Joined Accurately', val: '4 Disjointed Tables Linked' },
+      { label: 'Cryptic Fields Mapped', val: '18 Columns Defined in Plain English' },
+      { label: 'Report Generation Time', val: '1.4 Seconds (100% Verified)' }
     ]
   },
   customers: {
-    question: '“Which of our top client accounts renewing next month have overdue invoices or special contract terms we need to review?”',
-    dirtySource: 'Customer Database + Billing Database + Signed PDF Client Agreements',
-    dirtyOutput: '“Client "GlobalTech Inc" and "Global Tech LLC" appear in your database with different balances. Standard renewal pricing applies.”',
-    dirtyError: 'WHY STANDARD AI FAILED: Didn’t realize "GlobalTech Inc" in the customer database and "Global Tech LLC" on the signed PDF contract were the exact same client.',
-    cleanSource: 'Unified Client View: Customer Database + Billing Tables + Signed PDF Contracts',
-    cleanRule: 'Merged Duplicate Client Records Across Databases & Linked Signed PDF Addendums',
-    cleanOutput: '“3 major accounts ($1.84M total value) renewing in the next 45 days need immediate review: (1) GlobalTech ($740K, renews in 28 days) — has $82K in overdue invoices in the billing database and a 5% price-cap clause in their 2025 PDF Addendum; (2) Vantara Health ($620K) — usage dropped 31% in the product database; (3) Northstar ($480K) — custom SLA document expires Nov 15.”',
+    question: '“Which enterprise customer accounts renewing next quarter had a drop in usage over the last 30 days?”',
+    dirtySource: 'Raw Tables: CUST_MSTR_01, SUB_BILL_HIST, APP_EVT_LOG, ACCT_STATUS',
+    dirtyOutput: '“Unable to connect SUB_BILL_HIST to APP_EVT_LOG because `CUST_NO` is an integer in billing while `WORKSPACE_UID` is a UUID string in the product usage table. Also unclear if `STAT_FLG = 2` means active or paused.”',
+    dirtyError: 'WHY THE AI AGENT FAILED: The billing table and product usage table use completely different ID formats with no mapping bridge, and status flags (`STAT_FLG = 2`) are not defined.',
+    cleanSource: 'Sabr AI Mapped Layer: Billing Subscriptions ↔ Product Telemetry ↔ Account Master',
+    cleanRule: 'Bridged `CUST_NO` ↔ `WORKSPACE_UID` | Defined `STAT_FLG=2` → Active Renewal Pending | Defined Active Seat Usage Formula',
+    cleanOutput: '“3 enterprise accounts ($1.84M combined ARR) renewing in the next 60 days had a >25% drop in active usage over the last 30 days: (1) GlobalTech ($740K ARR, renews Nov 24) — active seats down 34%; (2) Vantara Health ($620K ARR, renews Dec 8) — weekly logins down 29%; (3) Northstar ($480K ARR, renews Dec 19) — API volume down 31%.”',
     cleanMetrics: [
-      { label: 'Renewals Flagged', val: '$1.84M Across 3 Client Accounts' },
-      { label: 'Data Connected', val: 'Customer DB + Billing DB + PDF Contracts' },
-      { label: 'Access Control', val: 'Verified · Executive & Finance Only' }
+      { label: 'At-Risk Renewals Found', val: '$1.84M Across 3 Accounts' },
+      { label: 'ID Mismatches Solved', val: 'Billing ID ↔ Product UUID Bridged' },
+      { label: 'AI Agent Action', val: 'Auto-Scheduled Weekly Alert' }
     ]
   },
   operations: {
-    question: '“Across our vendor database and PDF agreements, which suppliers missed delivery targets and allow 15-day cancellation?”',
-    dirtySource: 'Inventory & Operations Database + 1,200 Scanned PDF Vendor Agreements & SOPs',
-    dirtyOutput: '“I found 14 PDF agreements mentioning cancellation clauses, but vendor IDs in your operations database use numeric codes that don’t match the company names on the PDFs.”',
-    dirtyError: 'WHY STANDARD AI FAILED: Couldn’t link vendor ID "#9921" in your database to the legal company name written inside your scanned PDF contracts.',
-    cleanSource: 'Connected Operations View: Vendor Database + Delivery Tables + Parsed PDF Contracts',
-    cleanRule: 'Linked Database Vendor IDs to Legal PDF Agreements · Extracted Delivery & Penalty Clauses',
-    cleanOutput: '“2 suppliers missed >3% of deliveries in your database last quarter and carry 15-day cancellation clauses in their PDF contracts: (1) Precision Parts Co. (DB ID #9921) — 4.6% late deliveries in Q3; Master Agreement PDF (§14.2) allows 15-day cancellation without penalty. (2) Apex Supply (DB ID #4082) — 3.4% late rate; PDF Addendum (§11.4) caps liability at 1x monthly order.”',
+    question: '“Show our current inventory backlog by warehouse and flag any items where supplier lead time exceeds current stock days.”',
+    dirtySource: 'Raw Tables: WH_STK_BAL, PO_LINE_ITEMS, VND_LEAD_TBL, SKU_XREF',
+    dirtyOutput: '“Table `WH_STK_BAL` lists `QTY_A`, `QTY_B`, and `QTY_R`. It is not defined which column represents sellable stock on hand versus reserved or damaged inventory. Join to `PO_LINE_ITEMS` produced duplicate rows.”',
+    dirtyError: 'WHY THE AI AGENT FAILED: Undocumented quantity columns (`QTY_A` vs `QTY_R`) and a many-to-many join trap between warehouse stock and open purchase orders.',
+    cleanSource: 'Sabr AI Mapped Layer: Warehouse Stock ↔ Open Purchase Orders ↔ Supplier Lead Times',
+    cleanRule: 'Defined `QTY_A - QTY_R` → Net Sellable Stock | Mapped `VND_LT_DAYS` → Verified Lead Time | Fixed 1-to-Many PO Join',
+    cleanOutput: '“Across 4 warehouses, 14 high-velocity SKUs have fewer days of sellable stock (`QTY_A - QTY_R`) than their supplier’s current lead time: Dallas Warehouse has 6 SKUs at risk ($410K backlog exposure, 9 days stock vs. 18-day lead time), and Newark Warehouse has 8 SKUs at risk ($530K exposure).”',
     cleanMetrics: [
-      { label: 'Vendors Identified', val: '2 Suppliers ($1.4M Annual Spend)' },
-      { label: 'Records Checked', val: 'Operations DB + 1,200 PDF Contracts' },
-      { label: 'Time to Answer', val: '1.2 Seconds (vs. 3 Days Manual)' }
+      { label: 'Stockout Risk Flagged', val: '14 SKUs ($940K Order Value)' },
+      { label: 'Ambiguous Columns Fixed', val: 'QTY_A / QTY_B / QTY_R Defined' },
+      { label: 'Join Accuracy', val: 'Zero Double-Counting' }
     ]
   },
   board: {
-    question: '“Generate our monthly Executive Financial & Operations Report comparing actual database numbers against our budget documents.”',
-    dirtySource: 'Accounting Database + Department Databases + Official Budget & Policy Documents',
-    dirtyOutput: '“Monthly operating profit was either $1.12M or $1.28M depending on which database table or budget document is used. Department definitions of net retention do not match.”',
-    dirtyError: 'WHY STANDARD AI FAILED: Different database tables and policy documents used conflicting formulas for the same business metric.',
-    cleanSource: 'Single Company Standard: Governed Databases + Official Policy & Budget Documents',
-    cleanRule: 'Locked One Official Formula for Every Business Metric · Linked Every Number to Its Source',
-    cleanOutput: '“October Revenue reached $4.86M (+18.4% YoY, +$112K above budget), with Net Operating Profit of $1.28M (26.4% margin). Net Customer Retention is 114.2%. All 24 executive summary lines are automatically verified against your accounting database and linked directly to supporting contract and policy documents.”',
+    question: '“Run our monthly Executive KPI Report comparing actuals vs. budget across Finance, Sales, and Operations.”',
+    dirtySource: 'Raw Tables: FIN_GL_SUM, SLS_PIPE_RAW, OPS_KPI_2026, BUD_TARGET_TBL',
+    dirtyOutput: '“Finance table `FIN_GL_SUM` reports October revenue as $4.86M (accrual), while `SLS_PIPE_RAW` reports $5.19M (bookings). Because fiscal calendar periods and revenue definitions are not mapped between tables, I cannot produce a unified variance report.”',
+    dirtyError: 'WHY THE AI AGENT FAILED: Different department tables use different date calendars, different currency/unit scales, and unaligned KPI definitions.',
+    cleanSource: 'Sabr AI Mapped Layer: Unified Company Data Dictionary Across Finance, Sales & Operations',
+    cleanRule: 'Aligned Fiscal Calendar Across All Tables | Defined Recognized Revenue vs. Bookings | Mapped Budget Codes to GL Accounts',
+    cleanOutput: '“October Recognized Revenue reached $4.86M (+18.4% YoY, +$112K above budget), New Bookings totaled $5.19M (106% of quota), and Operating Profit hit $1.28M (26.4% margin). Every figure is pulled directly from your mapped database tables using your official board formulas.”',
     cleanMetrics: [
-      { label: 'Report Prep Time', val: 'Cut from 5 Days → 2 Minutes' },
-      { label: 'Conflicting Numbers', val: 'Zero (One Company Standard)' },
-      { label: 'Source Verification', val: '100% Linked to DB Rows & PDFs' }
+      { label: 'Monthly Report Prep', val: 'Cut from 5 Days → Instant' },
+      { label: 'KPI Definitions Locked', val: '100% Aligned Across Departments' },
+      { label: 'Audit Trail', val: 'Every Number Traced to Exact Field' }
     ]
   }
 };
@@ -191,7 +191,7 @@ function initLLMSandbox() {
   renderScenario('margin');
 }
 
-/* 4. Interactive Business Time & Cost Savings Calculator */
+/* 4. Interactive Database Mapping & Reporting ROI Calculator */
 function initROICalculator() {
   const sourcesInput = document.getElementById('roi-sources');
   const engineersInput = document.getElementById('roi-engineers');
@@ -203,7 +203,7 @@ function initROICalculator() {
   function updateROI() {
     const sources = parseInt(sourcesInput.value, 10) || 6;
     const engineers = parseInt(engineersInput.value, 10) || 5;
-    const docsK = parseInt(docsInput?.value || '40', 10);
+    const tablesCount = parseInt(docsInput?.value || '80', 10);
     const queriesK = parseInt(queriesInput?.value || '20', 10);
 
     const sVal = document.getElementById('roi-sources-val');
@@ -212,12 +212,12 @@ function initROICalculator() {
     const qVal = document.getElementById('roi-queries-val');
 
     if (sVal) sVal.textContent = `${sources} Databases`;
-    if (eVal) eVal.textContent = `${engineers} Staff / Analysts`;
-    if (dVal) dVal.textContent = `${docsK.toLocaleString()}k Documents`;
-    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k Reports & Queries/mo`;
+    if (eVal) eVal.textContent = `${engineers} Analysts / Engineers`;
+    if (dVal) dVal.textContent = `${tablesCount.toLocaleString()} Disjointed Tables`;
+    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k AI Reports & Queries/mo`;
 
     const annualEngSaved = Math.round(engineers * 165000 * 0.42);
-    const contextComputeSaved = Math.round((queriesK * 12 * 1.45) + (sources * 6800) + (docsK * 290));
+    const contextComputeSaved = Math.round((queriesK * 12 * 1.45) + (sources * 6800) + (tablesCount * 310));
     const totalAnnualBenefit = annualEngSaved + contextComputeSaved;
 
     const estInvestment = 85000 + (sources * 4500);
@@ -236,11 +236,11 @@ function initROICalculator() {
 
     if (outTier) {
       if (sources <= 5) {
-        outTier.textContent = 'Recommended Starting Point: Tier 1 (14-Day Database & Document Audit — $18,500)';
+        outTier.textContent = 'Recommended Starting Point: Tier 1 (14-Day Database Field Mapping Audit — $18,500)';
       } else if (sources <= 14) {
-        outTier.textContent = 'Recommended Starting Point: 14-Day Audit → Tier 2 Complete Database & Document Cleanup ($75k–$125k)';
+        outTier.textContent = 'Recommended Starting Point: 14-Day Mapping Audit → Tier 2 Complete Database Mapping & AI Agent Setup ($75k–$125k)';
       } else {
-        outTier.textContent = 'Recommended Starting Point: Full Company Data Transformation + Ongoing Monthly Support';
+        outTier.textContent = 'Recommended Starting Point: Full Multi-Database Mapping + Ongoing Schema Maintenance';
       }
     }
   }
@@ -252,7 +252,7 @@ function initROICalculator() {
   updateROI();
 }
 
-/* 5. Contact & Data Assessment Form Handler */
+/* 5. Contact & Database Mapping Assessment Form Handler */
 function initContactForms() {
   const forms = document.querySelectorAll('.sabr-contact-form');
   if (forms.length === 0) return;
@@ -287,10 +287,10 @@ function initContactForms() {
         workEmail: formData.get('work_email') || '',
         company: formData.get('company') || '',
         role: formData.get('role') || '',
-        engagementTier: formData.get('engagement_tier') || '14-Day Database & Document Assessment',
-        primaryGoal: formData.get('primary_goal') || 'Clean Up Databases & Documents for AI Reporting',
+        engagementTier: formData.get('engagement_tier') || '14-Day Database Field Mapping Assessment',
+        primaryGoal: formData.get('primary_goal') || 'Map Disjointed Database Fields & Connect AI Agent for Reporting',
         dataVolume: formData.get('data_volume') || '',
-        dataSources: sources.length ? sources : ['Company Databases & Business Documents'],
+        dataSources: sources.length ? sources : ['Company Databases & Disjointed Tables'],
         notes: formData.get('project_notes') || ''
       };
 
@@ -310,24 +310,24 @@ function initContactForms() {
                 ✓ REQUEST RECEIVED · REF #${submission.id}
               </span>
               <span class="rounded-full bg-white border border-teal-300 px-3 py-0.5 font-mono text-xs font-semibold text-teal-900">
-                AI Readiness Fit Score: ${complexityScore}/100
+                AI Agent Readiness Score: ${complexityScore}/100
               </span>
             </div>
             <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
               Thank you, ${escapeHtml(submission.fullName)} — Sabr Systems has received your inquiry.
             </h4>
             <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              A Senior Partner at Sabr Systems will review the database and document scope for <strong>${escapeHtml(submission.company)}</strong> (${escapeHtml(submission.dataSources.join(', '))}) and reach out to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours.
+              A Senior Partner at Sabr Systems will review the database mapping scope for <strong>${escapeHtml(submission.company)}</strong> (${escapeHtml(submission.dataSources.join(', '))}) and reach out to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours.
             </p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Database & Document AI Inquiry [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
+              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Database Mapping & AI Agent Inquiry [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
                 'Reference ID: ' + submission.id + '\n' +
                 'Name: ' + submission.fullName + ' (' + submission.role + ')\n' +
                 'Company: ' + submission.company + '\n' +
                 'Email: ' + submission.workEmail + '\n' +
                 'Preferred Option: ' + submission.engagementTier + '\n' +
                 'Main Goal: ' + submission.primaryGoal + '\n' +
-                'Databases & Documents Selected: ' + submission.dataSources.join(', ') + '\n' +
+                'Databases Selected: ' + submission.dataSources.join(', ') + '\n' +
                 'Notes: ' + submission.notes
               )}" class="btn-primary text-center">
                 Send Direct Email to Sabr Systems →
