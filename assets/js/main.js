@@ -1,6 +1,6 @@
 /* ==========================================================================
-   SABR AI by SABR SYSTEMS — Mobile-First Interactive Logic
-   Architectural Clarity for Enterprise Data & Executive LLM Reporting
+   SABR AI by SABR SYSTEMS — Plain-English Mobile-First Interactive Logic
+   We Clean & Organize Your Company's Databases & Documents So AI Works
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,7 +30,6 @@ function initMobileNav() {
     }
   });
 
-  // Close mobile drawer when a link is tapped
   drawer.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       drawer.classList.add('hidden');
@@ -43,7 +42,7 @@ function initMobileNav() {
   });
 }
 
-/* 2. Hero Card — Before (Raw Data Chaos) vs. After (Sabr AI Structured) Toggle */
+/* 2. Hero Card — Before (Messy Databases & Docs) vs. After (Clean & AI-Ready) Toggle */
 function initHeroVisualizer() {
   const buttons = document.querySelectorAll('.hero-state-btn');
   const panels = document.querySelectorAll('.hero-state-panel');
@@ -68,10 +67,10 @@ function initHeroVisualizer() {
 
     if (badge) {
       if (state === 'sabr-ai') {
-        badge.textContent = 'VERIFIED · 99.4% CITED ACCURACY';
+        badge.textContent = 'ORGANIZED & VERIFIED · READY FOR AI';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-800';
       } else {
-        badge.textContent = 'UNSTRUCTURED SILOS · 73% FAILURE RISK';
+        badge.textContent = 'MESSY DATABASES & DOCS · AI GUESSES WRONG';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-rose-800';
       }
     }
@@ -84,66 +83,62 @@ function initHeroVisualizer() {
   });
 }
 
-/* 3. Interactive Executive AI LLM Reporting Sandbox */
+/* 3. Interactive Business Questions Sandbox (Strictly Databases & Documents) */
 const SANDBOX_SCENARIOS = {
   margin: {
-    role: 'CFO / Finance & Margin',
-    question: '“Why did Q3 gross margin compress by 240 bps in our Midwest distribution centers, and which SKU contracts drove it?”',
-    dirtySource: 'SAP ERP_INV_99 + 412 Unindexed PDF Freight Addendums + Legacy Snowflake',
-    dirtyOutput: '“Based on Q1 budget planning documents and general warehouse logs, gross margin appears stable at ~34.1%. Freight surcharges may have increased in the Northeast or Midwest regions, though exact SKU-level contract overrides could not be resolved across tables.”',
-    dirtyError: 'HALLUCINATION & STALE DOC MATCH: Retrieved a superseded Q1 PDF instead of the signed Q3 carrier addendum; failed 6-table join between SAP_INV and SFDC_CONTRACT.',
-    cleanSource: 'Sabr AI Canonical Ontology (Entity-Resolved SKU + Signed PDF Carrier Addendum #408 + Governed SQL Metric)',
-    cleanSQL: 'SELECT d.depot_id, s.sku_family, SUM(f.fuel_surcharge_delta) AS margin_impact_bps FROM sabr-ai_semantic.fact_margin_v4 WHERE quarter = \'2026-Q3\' GROUP BY 1, 2;',
-    cleanOutput: '“Midwest Q3 gross margin dipped -242 bps (from 36.8% to 34.38%) due to two verified root causes: (1) -165 bps from cold-chain reefer fuel surcharges triggered under Carrier Addendum #408 (signed Aug 14, PDF p.4) on SKU family BIO-400 in Chicago & Detroit depots, and (2) -77 bps from unbilled expedited rebates on Enterprise Account #10492 (Acme Health).”',
+    question: '“Why did our profit margin drop 2.4% last quarter, and which client contracts or vendor agreements caused it?”',
+    dirtySource: 'Company Financial Database + 400 Scanned PDF Vendor Contracts + Pricing Tables',
+    dirtyOutput: '“Based on your Q1 database tables, profit margin looks steady around 34%. Shipping or vendor costs may have gone up, but I cannot match the scanned PDF agreements to your database rows.”',
+    dirtyError: 'WHY STANDARD AI FAILED: Read an outdated Q1 report document instead of the active Q3 contract PDF, and could not connect pricing tables in PDFs to your database records.',
+    cleanSource: 'Connected & Cleaned: Financial Database + Signed PDF Contracts + Pricing Tables',
+    cleanRule: 'Matched 412 Signed PDF Contracts to Database Records · Verified Active Dates',
+    cleanOutput: '“Q3 profit margin dropped 2.4% (from 36.8% to 34.4%) for two exact reasons: (1) A 1.65% increase from cold-storage surcharges in the signed Carrier Contract PDF (dated Aug 14, page 4), and (2) 0.75% from unbilled rush discounts recorded in your Q3 Orders Database for Acme Health.”',
     cleanMetrics: [
-      { label: 'Chicago Depot (ORD-02)', val: '-148 bps (Addendum #408)' },
-      { label: 'Detroit Depot (DTW-01)', val: '-94 bps (SKU BIO-400)' },
-      { label: 'Provenance Confidence', val: '99.6% · 4 Auditable Citations' }
+      { label: 'Reason #1 (PDF Contract)', val: '-1.65% (Aug 14 Contract PDF, p.4)' },
+      { label: 'Reason #2 (Orders Database)', val: '-0.75% (Unbilled Rush Discounts)' },
+      { label: 'Answer Accuracy', val: '99.6% · Links to Exact Records' }
     ]
   },
-  churn: {
-    role: 'CRO / Renewal Risk',
-    question: '“Which enterprise accounts renewing in the next 60 days have unresolved P1 engineering tickets and declining seat utilization?”',
-    dirtySource: 'Salesforce Opportunities + Zendesk Raw JSON + Jira Issues + Product Telemetry',
-    dirtyOutput: '“Account "GlobalTech Inc" and "Global Tech LLC" have open support tickets. Overall seat utilization looks healthy at 88%. Recommend standard renewal outreach.”',
-    dirtyError: 'ENTITY SPLIT & PERMISSION LEAK: Failed to merge "GlobalTech Inc" (Salesforce) with "Global-Tech-Prod" (Jira P1 outage); surfaced restricted HR table.',
-    cleanSource: 'Sabr AI Golden Account Graph (Salesforce + Jira + Zendesk + Snowflake Telemetry · Okta RBAC Enforced)',
-    cleanSQL: 'MATCH (a:GoldenAccount)-[:HAS_TICKET]->(t:JiraIssue {priority:"P1", status:"OPEN"}) WHERE a.renewal_days <= 60 AND a.seat_delta_30d < -0.20 RETURN a;',
-    cleanOutput: '“3 Enterprise renewals ($1.84M combined ARR) require immediate executive intervention before Nov 30: (1) GlobalTech ($740K ARR, renews in 28d) — 2 open P1 SSO latency bugs (JIRA-8821) + -34% weekly active seats over 21 days; (2) Vantara Bio ($620K ARR, 41d) — 1 P1 data export ticket in Slack #ext-vantara; (3) Northstar Logistics ($480K ARR, 54d) — -29% API volume.”',
+  customers: {
+    question: '“Which of our top client accounts renewing next month have overdue invoices or special contract terms we need to review?”',
+    dirtySource: 'Customer Database + Billing Database + Signed PDF Client Agreements',
+    dirtyOutput: '“Client "GlobalTech Inc" and "Global Tech LLC" appear in your database with different balances. Standard renewal pricing applies.”',
+    dirtyError: 'WHY STANDARD AI FAILED: Didn’t realize "GlobalTech Inc" in the customer database and "Global Tech LLC" on the signed PDF contract were the exact same client.',
+    cleanSource: 'Unified Client View: Customer Database + Billing Tables + Signed PDF Contracts',
+    cleanRule: 'Merged Duplicate Client Records Across Databases & Linked Signed PDF Addendums',
+    cleanOutput: '“3 major accounts ($1.84M total value) renewing in the next 45 days need immediate review: (1) GlobalTech ($740K, renews in 28 days) — has $82K in overdue invoices in the billing database and a 5% price-cap clause in their 2025 PDF Addendum; (2) Vantara Health ($620K) — usage dropped 31% in the product database; (3) Northstar ($480K) — custom SLA document expires Nov 15.”',
     cleanMetrics: [
-      { label: 'At-Risk Renewal ARR', val: '$1.84M across 3 Golden Entities' },
-      { label: 'Cross-Silo Entity Links', val: '4 Systems Unified (SFDC/Jira/Slack/DW)' },
-      { label: 'RBAC Policy Check', val: 'PASSED · RevOps Role Scoped' }
+      { label: 'Renewals Flagged', val: '$1.84M Across 3 Client Accounts' },
+      { label: 'Data Connected', val: 'Customer DB + Billing DB + PDF Contracts' },
+      { label: 'Access Control', val: 'Verified · Executive & Finance Only' }
     ]
   },
-  supply: {
-    role: 'COO / Supply Chain',
-    question: '“Which Tier-1 suppliers serve both our US and EU plants, had >3% lot rejection rates last quarter, and carry force-majeure clauses?”',
-    dirtySource: 'Oracle NetSuite POs + SharePoint Legal MSAs (Scanned PDFs) + Plant QMS CSVs',
-    dirtyOutput: '“We found 14 supplier MSAs mentioning force majeure in SharePoint. However, supplier IDs in plant quality CSVs use local vendor codes that do not map to legal entity names.”',
-    dirtyError: 'BROKEN JOIN & OCR FAILURE: Vector search retrieved generic legal boilerplate; could not join plant vendor code V-9921 to MSA counterparty.',
-    cleanSource: 'Sabr AI Hybrid GraphRAG + Layout-Aware PDF Table Parser + Master Vendor Ontology',
-    cleanSQL: 'SELECT v.canonical_vendor_name, q.lot_reject_pct, msa.force_majeure_notice_days FROM sabr-ai_graph.vendor_360 WHERE q.lot_reject_pct > 0.03;',
-    cleanOutput: '“2 dual-region Tier-1 suppliers breach the >3% defect threshold and carry restrictive force-majeure terms: (1) RheinMetall Precision GmbH (Vendor V-9921 / EU-402) — 4.6% lot rejection in Q3 across Ohio & Munich plants; MSA §14.2 allows 15-day supply halt without penalty. (2) Apex Polymer Corp — 3.4% rejection rate; MSA §11.4 caps liability at 1x monthly PO.”',
+  operations: {
+    question: '“Across our vendor database and PDF agreements, which suppliers missed delivery targets and allow 15-day cancellation?”',
+    dirtySource: 'Inventory & Operations Database + 1,200 Scanned PDF Vendor Agreements & SOPs',
+    dirtyOutput: '“I found 14 PDF agreements mentioning cancellation clauses, but vendor IDs in your operations database use numeric codes that don’t match the company names on the PDFs.”',
+    dirtyError: 'WHY STANDARD AI FAILED: Couldn’t link vendor ID "#9921" in your database to the legal company name written inside your scanned PDF contracts.',
+    cleanSource: 'Connected Operations View: Vendor Database + Delivery Tables + Parsed PDF Contracts',
+    cleanRule: 'Linked Database Vendor IDs to Legal PDF Agreements · Extracted Delivery & Penalty Clauses',
+    cleanOutput: '“2 suppliers missed >3% of deliveries in your database last quarter and carry 15-day cancellation clauses in their PDF contracts: (1) Precision Parts Co. (DB ID #9921) — 4.6% late deliveries in Q3; Master Agreement PDF (§14.2) allows 15-day cancellation without penalty. (2) Apex Supply (DB ID #4082) — 3.4% late rate; PDF Addendum (§11.4) caps liability at 1x monthly order.”',
     cleanMetrics: [
-      { label: 'High-Risk Dual Vendors', val: '2 Suppliers ($14.2M Annual Spend)' },
-      { label: 'MSA Clause Extraction', val: 'Layout-Parsed PDF §14.2 & §11.4' },
-      { label: 'Query Execution Latency', val: '1.18 sec (Hybrid Graph + SQL)' }
+      { label: 'Vendors Identified', val: '2 Suppliers ($1.4M Annual Spend)' },
+      { label: 'Records Checked', val: 'Operations DB + 1,200 PDF Contracts' },
+      { label: 'Time to Answer', val: '1.2 Seconds (vs. 3 Days Manual)' }
     ]
   },
   board: {
-    role: 'CEO / Board Packet',
-    question: '“Compile our Q3 Board Financial & Operational Variance Summary with auditable GL line items and executive narrative.”',
-    dirtySource: 'NetSuite GL + 18 Departmental Excel Models + FP&A Slide Decks',
-    dirtyOutput: '“EBITDA was either $11.2M or $12.8M depending on whether departmental spreadsheet v4_final.xlsx or NetSuite trial balance is used. Definitions of Net Revenue Retention vary across 3 decks.”',
-    dirtyError: 'METRIC DRIFT: 3 conflicting formulas for NRR and Adjusted EBITDA across FP&A spreadsheets and departmental dashboards.',
-    cleanSource: 'Sabr AI Governed Metric Store + Automated Board Narrative Compiler',
-    cleanSQL: 'EXECUTE sabr-ai_board.compile_variance_packet(quarter => \'2026-Q3\', audit_trail => TRUE);',
-    cleanOutput: '“Q3 2026 GAAP Revenue reached $48.62M (+18.4% YoY, +$1.12M vs. Plan), with Adjusted EBITDA of $12.84M (26.4% margin). Net Dollar Retention locked at 114.2% under canonical board definition (GL-4000-4999). All 24 variance commentary bullets are linked directly to underlying NetSuite journal entries and Salesforce closed-won contracts.”',
+    question: '“Generate our monthly Executive Financial & Operations Report comparing actual database numbers against our budget documents.”',
+    dirtySource: 'Accounting Database + Department Databases + Official Budget & Policy Documents',
+    dirtyOutput: '“Monthly operating profit was either $1.12M or $1.28M depending on which database table or budget document is used. Department definitions of net retention do not match.”',
+    dirtyError: 'WHY STANDARD AI FAILED: Different database tables and policy documents used conflicting formulas for the same business metric.',
+    cleanSource: 'Single Company Standard: Governed Databases + Official Policy & Budget Documents',
+    cleanRule: 'Locked One Official Formula for Every Business Metric · Linked Every Number to Its Source',
+    cleanOutput: '“October Revenue reached $4.86M (+18.4% YoY, +$112K above budget), with Net Operating Profit of $1.28M (26.4% margin). Net Customer Retention is 114.2%. All 24 executive summary lines are automatically verified against your accounting database and linked directly to supporting contract and policy documents.”',
     cleanMetrics: [
-      { label: 'Board Packet Prep Time', val: 'Reduced from 9 Days → 4 Minutes' },
-      { label: 'Metric Formula Drift', val: '0% (Single Canonical YAML Spec)' },
-      { label: 'GL-to-Slide Lineage', val: '100% Cell-Level Audit Trail' }
+      { label: 'Report Prep Time', val: 'Cut from 5 Days → 2 Minutes' },
+      { label: 'Conflicting Numbers', val: 'Zero (One Company Standard)' },
+      { label: 'Source Verification', val: '100% Linked to DB Rows & PDFs' }
     ]
   }
 };
@@ -170,7 +165,7 @@ function initLLMSandbox() {
     if (dOut) dOut.textContent = data.dirtyOutput;
     if (dErr) dErr.textContent = data.dirtyError;
     if (cSource) cSource.textContent = data.cleanSource;
-    if (cSql) cSql.textContent = data.cleanSQL;
+    if (cSql) cSql.textContent = data.cleanRule;
     if (cOut) cOut.textContent = data.cleanOutput;
 
     if (cMetrics) {
@@ -196,7 +191,7 @@ function initLLMSandbox() {
   renderScenario('margin');
 }
 
-/* 4. Interactive Enterprise ROI & Data Readiness Savings Calculator */
+/* 4. Interactive Business Time & Cost Savings Calculator */
 function initROICalculator() {
   const sourcesInput = document.getElementById('roi-sources');
   const engineersInput = document.getElementById('roi-engineers');
@@ -206,22 +201,22 @@ function initROICalculator() {
   if (!sourcesInput || !engineersInput) return;
 
   function updateROI() {
-    const sources = parseInt(sourcesInput.value, 10) || 8;
-    const engineers = parseInt(engineersInput.value, 10) || 6;
-    const docsK = parseInt(docsInput?.value || '50', 10);
-    const queriesK = parseInt(queriesInput?.value || '25', 10);
+    const sources = parseInt(sourcesInput.value, 10) || 6;
+    const engineers = parseInt(engineersInput.value, 10) || 5;
+    const docsK = parseInt(docsInput?.value || '40', 10);
+    const queriesK = parseInt(queriesInput?.value || '20', 10);
 
     const sVal = document.getElementById('roi-sources-val');
     const eVal = document.getElementById('roi-engineers-val');
     const dVal = document.getElementById('roi-docs-val');
     const qVal = document.getElementById('roi-queries-val');
 
-    if (sVal) sVal.textContent = `${sources} Systems`;
-    if (eVal) eVal.textContent = `${engineers} Engineers`;
-    if (dVal) dVal.textContent = `${docsK.toLocaleString()}k Docs`;
-    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k Queries/mo`;
+    if (sVal) sVal.textContent = `${sources} Databases`;
+    if (eVal) eVal.textContent = `${engineers} Staff / Analysts`;
+    if (dVal) dVal.textContent = `${docsK.toLocaleString()}k Documents`;
+    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k Reports & Queries/mo`;
 
-    const annualEngSaved = Math.round(engineers * 215000 * 0.44);
+    const annualEngSaved = Math.round(engineers * 165000 * 0.42);
     const contextComputeSaved = Math.round((queriesK * 12 * 1.45) + (sources * 6800) + (docsK * 290));
     const totalAnnualBenefit = annualEngSaved + contextComputeSaved;
 
@@ -235,17 +230,17 @@ function initROICalculator() {
     const outTier = document.getElementById('roi-recommended-tier');
 
     if (outSavings) outSavings.textContent = '$' + totalAnnualBenefit.toLocaleString();
-    if (outEngHours) outEngHours.textContent = Math.round(engineers * 2080 * 0.44).toLocaleString() + ' hrs/yr';
+    if (outEngHours) outEngHours.textContent = Math.round(engineers * 2080 * 0.42).toLocaleString() + ' hrs/yr';
     if (outPayback) outPayback.textContent = paybackMonths + ' Months';
-    if (outMultiple) outMultiple.textContent = (totalAnnualBenefit / estInvestment).toFixed(1) + 'x Year-1 ROI';
+    if (outMultiple) outMultiple.textContent = (totalAnnualBenefit / estInvestment).toFixed(1) + 'x First-Year Return';
 
     if (outTier) {
       if (sources <= 5) {
-        outTier.textContent = 'Recommended Track: Tier 1 (14-Day Data Readiness Audit — $18,500) → Core Sabr AI Foundation';
+        outTier.textContent = 'Recommended Starting Point: Tier 1 (14-Day Database & Document Audit — $18,500)';
       } else if (sources <= 14) {
-        outTier.textContent = 'Recommended Track: Tier 1 Diagnostic Sprint → Tier 2 Turnkey Sabr AI Transformation ($75k–$125k)';
+        outTier.textContent = 'Recommended Starting Point: 14-Day Audit → Tier 2 Complete Database & Document Cleanup ($75k–$125k)';
       } else {
-        outTier.textContent = 'Recommended Track: Enterprise Multi-Domain Sabr AI Transformation + Tier 3 Managed Stewardship';
+        outTier.textContent = 'Recommended Starting Point: Full Company Data Transformation + Ongoing Monthly Support';
       }
     }
   }
@@ -257,7 +252,7 @@ function initROICalculator() {
   updateROI();
 }
 
-/* 5. Contact & Data Readiness Intake Form Handler */
+/* 5. Contact & Data Assessment Form Handler */
 function initContactForms() {
   const forms = document.querySelectorAll('.sabr-contact-form');
   if (forms.length === 0) return;
@@ -292,10 +287,10 @@ function initContactForms() {
         workEmail: formData.get('work_email') || '',
         company: formData.get('company') || '',
         role: formData.get('role') || '',
-        engagementTier: formData.get('engagement_tier') || '14-Day Data Readiness Audit',
-        primaryGoal: formData.get('primary_goal') || 'Clean & Structure Data + LLM Reporting',
+        engagementTier: formData.get('engagement_tier') || '14-Day Database & Document Assessment',
+        primaryGoal: formData.get('primary_goal') || 'Clean Up Databases & Documents for AI Reporting',
         dataVolume: formData.get('data_volume') || '',
-        dataSources: sources.length ? sources : ['ERP / CRM / Unstructured Docs'],
+        dataSources: sources.length ? sources : ['Company Databases & Business Documents'],
         notes: formData.get('project_notes') || ''
       };
 
@@ -303,7 +298,7 @@ function initContactForms() {
       existing.unshift(submission);
       localStorage.setItem('sabr_sabr-ai_leads', JSON.stringify(existing));
 
-      const complexityScore = Math.min(96, 64 + (sources.length * 4));
+      const complexityScore = Math.min(98, 72 + (sources.length * 4));
       const feedbackBox = form.querySelector('.form-submission-result');
 
       if (feedbackBox) {
@@ -312,33 +307,33 @@ function initContactForms() {
           <div class="mt-6 rounded-2xl border-2 border-teal-600 bg-teal-50/90 p-5 sm:p-6 text-slate-900 shadow-sm">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <span class="font-mono text-xs font-bold uppercase tracking-wider text-teal-800">
-                ✓ INTAKE BRIEF RECEIVED · REF #${submission.id}
+                ✓ REQUEST RECEIVED · REF #${submission.id}
               </span>
               <span class="rounded-full bg-white border border-teal-300 px-3 py-0.5 font-mono text-xs font-semibold text-teal-900">
-                Readiness Fit Score: ${complexityScore}/100
+                AI Readiness Fit Score: ${complexityScore}/100
               </span>
             </div>
             <h4 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
-              Thank you, ${escapeHtml(submission.fullName)} — Sabr Systems Engineering has queued your Data Readiness Dossier.
+              Thank you, ${escapeHtml(submission.fullName)} — Sabr Systems has received your inquiry.
             </h4>
             <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              A Sabr Systems Principal Partner (Ivy League Data &amp; AI Architecture Lead) will review your <strong>${escapeHtml(submission.company)}</strong> stack (${escapeHtml(submission.dataSources.join(', '))}) and respond to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours with a custom architecture schematic and 14-Day Sprint scope.
+              A Senior Partner at Sabr Systems will review the database and document scope for <strong>${escapeHtml(submission.company)}</strong> (${escapeHtml(submission.dataSources.join(', '))}) and reach out to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours.
             </p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Data Readiness Inquiry [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
+              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Database & Document AI Inquiry [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
                 'Reference ID: ' + submission.id + '\n' +
                 'Name: ' + submission.fullName + ' (' + submission.role + ')\n' +
                 'Company: ' + submission.company + '\n' +
                 'Email: ' + submission.workEmail + '\n' +
-                'Preferred Engagement: ' + submission.engagementTier + '\n' +
-                'Primary Objective: ' + submission.primaryGoal + '\n' +
-                'Data Sources: ' + submission.dataSources.join(', ') + '\n' +
+                'Preferred Option: ' + submission.engagementTier + '\n' +
+                'Main Goal: ' + submission.primaryGoal + '\n' +
+                'Databases & Documents Selected: ' + submission.dataSources.join(', ') + '\n' +
                 'Notes: ' + submission.notes
               )}" class="btn-primary text-center">
                 Send Direct Email to Sabr Systems →
               </a>
               <button type="button" class="btn-secondary text-center" onclick="downloadIntakeBrief('${submission.id}')">
-                Download JSON Scope Receipt
+                Download Summary Receipt
               </button>
             </div>
           </div>
@@ -357,7 +352,7 @@ window.downloadIntakeBrief = function(refId) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `${item.id}-Sabr-Systems-Sabr AI-Brief.json`;
+  a.download = `${item.id}-Sabr-Systems-Sabr AI-Summary.json`;
   a.click();
   URL.revokeObjectURL(url);
 };

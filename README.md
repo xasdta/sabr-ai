@@ -1,35 +1,30 @@
-# Sabr AI by Sabr Systems — Architectural Clarity for Your Company's Data
+# Sabr AI by Sabr Systems — We Clean and Organize Your Company's Databases & Documents So You Can Actually Use AI
 
-**Enterprise AI Data Readiness, Semantic Vectorization & Executive LLM Reporting**
+**Database & Document Cleanup, Structuring, and AI Reporting for Businesses**
 
 > **Provided by Sabr Systems LLC**  
-> Built by **Ivy League Data & AI Engineers** · Deployed at **S&P 500 Scale** · **25+ Years Collective Software & Infrastructure Experience**
+> Built by **Ivy League Data & AI Engineers** · **S&P 500 Experience** · **25+ Years Collective Software, Database & Infrastructure Experience**
 
 ---
 
-## Overview
+## What We Do
 
-Dirty, siloed, or unstructured data is the #1 practical blocker to useful AI agents and LLM reporting inside enterprises. **Sabr AI by Sabr Systems** systematically cleans, deduplicates, tags, builds semantic ontologies, and vectorizes internal company data across ERPs, CRMs, cloud warehouses, PDFs, SharePoint, and Slack—turning high-entropy silos into a governed intelligence layer for **zero-hallucination Executive AI LLM Reporting** and **production-grade AI agents**.
+Most AI projects fail because a company's **databases** and **business documents** are messy, duplicated, or don't match up. **Sabr AI by Sabr Systems** cleans up, organizes, and connects all of your company's databases (SQL, cloud databases, financial/operations tables, spreadsheets) and documents (PDF contracts, invoices, SOP manuals, reports, policies)—so you can ask plain-English questions and get instant, accurate answers and reports you can trust.
 
-## Mobile-First Multi-Page Website Architecture
+## Website Pages
 
-Built with compiled **Tailwind CSS**, clean daylight editorial typography (`Plus Jakarta Sans`, `Instrument Serif`, `JetBrains Mono`), and responsive mobile-first layouts tested down to `375px` viewports:
-
-- **`index.html` — Flagship Overview & Hero Card**:
-  - **Flagship Hero Card**: Clearly communicates the exact service Sabr Systems sells (*"Architectural Clarity for Your Company's Data — So AI Agents & LLMs Actually Work"*), highlights the 4 core deliverables, showcases **Ivy League**, **S&P 500**, and **25+ Years Infrastructure** pedigree credentials, and embeds an interactive **Before (Raw Silos) vs. After (Sabr AI Structured)** pipeline inspector.
-  - **4-Stage Sabr AI Method**: Audit & Deduplicate → Normalize & Schema-Lock → Govern & Vectorize → Report & Deploy Agents.
-  - **Interactive Executive AI LLM Reporting Sandbox**: Live side-by-side comparison across 4 C-Suite scenarios (CFO Margin Variance, CRO Renewal Risk, COO Supply Chain/MSA Risk, CEO Automated Board Packet).
-  - **Embedded Lead Capture & Intake Form**: Instant fit scoring, JSON brief export, and pre-filled engineering dispatch.
-- **`pipeline.html` — 4-Stage Technical Architecture**:
-  - Mobile-responsive 5-stage architectural flow, probabilistic entity resolution (`Splink`), governed YAML metric specifications, compile-time Okta/Entra RBAC filtering, and raw-chunk vs. Sabr AI-artifact code comparison.
-- **`solutions.html` — Enterprise Use Cases & Ecosystem**:
-  - 6 departmental playbooks (CFO/FP&A, CRO/RevOps, COO/Supply Chain ERP, Tier-3 Support, HIPAA/SOC2 Regulated RAG, and PE Post-Merger Harmonization) + pre-built connector ecosystem cards.
-- **`pricing.html` — Productized B2B Engagement Tiers & Interactive ROI Calculator**:
-  - **Tier 1:** 14-Day Data Readiness & Agent Audit Sprint ($18,500 fixed — 100% credited to Tier 2)
-  - **Tier 2:** Turnkey Sabr AI Foundation & Executive LLM Reporting Suite ($75,000 – $140,000)
-  - **Tier 3:** Continuous Data Hygiene & Managed Agent Ops Retainer ($9,500/mo)
-  - **Interactive Enterprise ROI Simulator**: Real-time calculation of engineering hours reclaimed, payback period, and net ROI multiple.
-- **`market-analysis.html` — 2026 Market Analysis & Business Model Blueprint**:
-  - Deep market sizing ($31.29B in 2026 → $85.91B by 2031 at 22.38% CAGR per Mordor Intelligence, Gartner & IDC), competitive landscape cards, ICP segmentation, and unit economics analysis.
-- **`contact.html` — Direct Principal Engineer Intake & Assessment Form**:
-  - Full multi-parameter technical intake form with data stack selector checkboxes, instant Readiness Fit Score, downloadable JSON receipt, and direct email integration.
+- **`index.html` — Overview & Hero Card**:
+  - Plain-English Hero Card explaining what Sabr Systems sells, with an interactive **Before (Messy Data) vs. After (Cleaned by Sabr)** comparison, our 2 core focus areas (**Company Databases** and **Business Documents**), our 4-step process, an interactive business Q&A demo, and an embedded contact form.
+- **`pipeline.html` — How It Works (4 Simple Steps)**:
+  - Step 1: Remove Duplicates & Outdated Files → Step 2: Connect Documents to Database Rows → Step 3: Make AI-Searchable & Private → Step 4: Ask Questions & Get Instant Reports.
+- **`solutions.html` — What You Can Do**:
+  - 6 clear business outcomes across Executive & Board Reporting, Client Accounts & Contracts, Operations & Vendor Agreements, Internal SOPs & Manuals, Healthcare/Legal Compliance, and Multi-Location Database Unification.
+- **`pricing.html` — Simple Fixed-Price Packages & Savings Calculator**:
+  - **Step 1:** 14-Day Database & Document Assessment ($18,500 fixed — 100% credited toward full setup)
+  - **Step 2:** Complete Database & Document Cleanup + AI Reporting ($75,000 – $140,000)
+  - **Step 3:** Monthly Data Maintenance & AI Support ($9,500/mo)
+  - Interactive Time & Cost Savings Calculator.
+- **`market-analysis.html` — Why Clean Data Matters (2026 Market & ROI Study)**:
+  - Plain-English summary of why 80% of AI projects fail without clean data and the $31.29B → $85.91B AI Data Readiness market.
+- **`contact.html` — Contact Us & 14-Day Assessment Form**:
+  - Direct intake form for business leaders to select their databases and document types and schedule a call with Sabr Systems' engineering partners.
