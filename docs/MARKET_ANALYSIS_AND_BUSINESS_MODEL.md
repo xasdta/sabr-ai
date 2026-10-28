@@ -1,5 +1,5 @@
 # 2026 Market Analysis & Business Model Blueprint
-## Sabr AI by Sabr Systems — Mapping Disjointed Database Fields for AI Agents & Reporting
+## Sabr AI by Sabr Systems — Database Field Mapping, Unified Live Query Architecture & AI Agents
 
 **Prepared:** October 2026  
 **Company:** Sabr Systems LLC  
@@ -7,22 +7,20 @@
 
 ---
 
-## 1. Executive Thesis: Why AI Agents Cannot Understand Raw Company Databases
+## 1. Executive Thesis: Why AI Agents Need Both Mapped Fields and a Unified Cross-Database Query Engine
 
-Companies already have valuable data in their SQL and cloud databases, but when they try to connect an AI agent to run reports or automate workflows, the AI fails.
+Companies have valuable data in databases like MySQL, PostgreSQL, SQL Server, and Oracle—but when they try to connect an AI agent to run reports, they hit two structural blockers:
+1. **Cryptic, Undefined Columns:** Tables are full of developer shorthand (`VAL_ADJ_2`, `ST_CD = 4`) and unwritten KPI calculation rules, causing LLMs to achieve **under 15% zero-shot accuracy** on multi-table queries.
+2. **Isolated Database Engines:** Orders sit in MySQL, subscriptions sit in PostgreSQL, and accounting sits in SQL Server. Normally, joining them requires a 9–12 month ETL data warehouse migration.
 
-- **Under 15% Zero-Shot Accuracy on Raw Relational Tables:** Industry benchmarks show that connecting an LLM directly to raw enterprise databases spanning 5+ table joins yields under 15% accuracy. Why? Because database schemas contain **cryptic column abbreviations** (`VAL_ADJ_2`, `ST_CD = 4`), **disjointed foreign keys**, and **unwritten KPI calculation formulas**.
-- **75% of Companies Lack a Mapped Business Dictionary:** Three out of four companies have no formal semantic mapping layer translating their raw database columns into plain-English definitions an AI agent can interpret.
-- **4.6x Higher Production AI Success Rate (IDC 2026 Survey):** Companies that map and define their database fields into governed data products achieve **65% production AI agent deployment** vs. **14%** for peers with unmapped tables, driving **3.5x stronger financial KPI gains (+10.2% vs. +2.9%)**.
-- **$31.29B Market in 2026 → $85.91B by 2031 (22.38% CAGR):** Enterprise demand for AI data readiness and schema mapping services is expanding rapidly.
+**Sabr Systems' Solution:** We combine **plain-English database field mapping** with a **distributed, in-place SQL query engine** that joins tables across MySQL, PostgreSQL, SQL Server, and cloud databases in real time (zero data copying)—and we **build and deploy custom AI agents** on top of that unified catalog.
 
 ---
 
-## 2. Simple 3-Step Business Model
+## 2. Core Architectural Capabilities Deployed for Clients
 
-1. **Step 1 — 14-Day Database Field Mapping Audit ($18,500 Fixed Fee · 100% Credited Toward Step 2):**
-   - Sabr Systems inspects the client's database schemas, maps core cryptic columns and table joins into a plain-English business dictionary, and delivers a working live AI agent reporting demo on their own tables in 10 business days.
-2. **Step 2 — Complete Database Mapping & AI Agent Reporting Setup ($75,000 – $140,000 · 6–10 Weeks):**
-   - Turnkey mapping of up to 12 databases/core schemas, cross-table join bridges, locked KPI calculation rules, role-based field permissions, and a custom AI Agent Reporting portal inside the client's private cloud.
-3. **Step 3 — Ongoing Schema Maintenance & AI Agent Support ($9,500/mo or $99,000/yr):**
-   - Automatic mapping updates when database columns change, weekly AI reporting accuracy checks (99.4%+ verified SLA), and mapping for up to 2 new databases or AI agent workflows per quarter.
+- **Zero-Copy Federated Cross-Database Joins:** Join live tables across MySQL, PostgreSQL, SQL Server, Oracle, Snowflake, BigQuery, and MongoDB in a single SQL query without moving or duplicating data.
+- **High-Speed Parallel In-Memory Execution:** Predicate pushdown and distributed parallel execution deliver sub-second to 2-second answers across millions of rows.
+- **Unified Semantic Catalog & Field Dictionary:** Exposes all connected databases under one standard SQL catalog where every column, status code, join path, and KPI formula is explicitly defined for AI agents.
+- **Read-Only Guardrails & Row/Column Security:** Enforces read-only execution, query timeouts, resource governors, and role-based column masking so production databases stay fast and secure.
+- **Turnkey AI Agent Deployment:** Custom AI reporting and monitoring agents built and deployed inside the client's private cloud.

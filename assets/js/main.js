@@ -1,6 +1,6 @@
 /* ==========================================================================
-   SABR AI by SABR SYSTEMS — Database Field Mapping & AI Agent Reporting Logic
-   We Map & Define Your Database Fields So AI Agents Can Use Your Data
+   SABR AI by SABR SYSTEMS — Database Mapping, Unified Query Engine & AI Agents
+   We Map Your Database Fields & Deploy AI Agents That Query Across All Your DBs
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,7 +42,7 @@ function initMobileNav() {
   });
 }
 
-/* 2. Hero Card — Before (Disjointed, Undefined Tables) vs. After (Mapped & AI-Ready) Toggle */
+/* 2. Hero Card — Before (Disjointed DBs) vs. After (Mapped + Unified Query Engine + AI Agent) Toggle */
 function initHeroVisualizer() {
   const buttons = document.querySelectorAll('.hero-state-btn');
   const panels = document.querySelectorAll('.hero-state-panel');
@@ -67,10 +67,10 @@ function initHeroVisualizer() {
 
     if (badge) {
       if (state === 'sabr-ai') {
-        badge.textContent = 'FIELDS MAPPED & DEFINED · AI AGENT READY';
+        badge.textContent = 'UNIFIED QUERY ENGINE + AI AGENT LIVE';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-800';
       } else {
-        badge.textContent = 'DISJOINTED TABLES · AI CANNOT UNDERSTAND';
+        badge.textContent = 'DISJOINTED DATABASES · AI CANNOT QUERY';
         badge.className = 'inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200 px-2.5 py-1 font-mono text-[11px] font-semibold text-rose-800';
       }
     }
@@ -83,62 +83,62 @@ function initHeroVisualizer() {
   });
 }
 
-/* 3. Interactive AI Agent Reporting Demo (Focused on Mapping Disjointed Database Fields) */
+/* 3. Interactive AI Agent Live Cross-Database Query Demo */
 const SANDBOX_SCENARIOS = {
   margin: {
     question: '“Why did our Q3 net margin drop 2.4% in the Midwest region, and which product lines drove the change?”',
-    dirtySource: 'Raw Tables: TBL_ORD_HDR, INV_COST_99, GL_POST_V2, REG_MAP_OLD',
-    dirtyOutput: '“I found columns named AMT_1, AMT_2, and NET_VAL_B across three tables, but there is no definition of whether freight adjustments (ADJ_CD=7) are subtracted from gross revenue. Estimated margin is somewhere between 29.1% and 38.4%.”',
-    dirtyError: 'WHY THE AI AGENT FAILED: Cryptic column names (AMT_1 vs NET_VAL_B), undocumented status codes (ADJ_CD=7), and no defined join path between your orders table and your general ledger table.',
-    cleanSource: 'Sabr AI Mapped Layer: Orders Table ↔ Product Cost Table ↔ Regional Ledger (All Fields Defined)',
-    cleanRule: 'Mapped `NET_VAL_B` → Verified Net Revenue | Linked `ORD_HDR.LOC_ID` → `REG_MAP.Region_Name` | Defined `ADJ_CD=7` → Cold-Chain Freight Surcharge',
-    cleanOutput: '“Midwest Q3 net margin dropped 2.42% (from 36.80% to 34.38%) driven by two mapped factors: (1) -1.65% from cold-chain freight surcharges (`ADJ_CD=7` in `GL_POST_V2`) on Product Line BIO-400 in Chicago and Detroit, and (2) -0.77% from promotional tier discounts (`DISC_TIER_3`) in `TBL_ORD_HDR`.”',
+    dirtySource: 'Separate Databases: MySQL (`orders_db.tbl_ord_hdr`) + SQL Server (`finance_db.gl_post_v2`)',
+    dirtyOutput: '“Orders live in MySQL and ledger costs live in SQL Server—I cannot run a single query across both databases. Also, MySQL column `AMT_1` and SQL Server column `NET_VAL_B` are not defined, and status code `ADJ_CD=7` is undocumented.”',
+    dirtyError: 'WHY RAW AI FAILED: Your orders sit in MySQL while accounting sits in SQL Server with no cross-database query engine, plus cryptic column names (`AMT_1` vs `NET_VAL_B`) are undefined.',
+    cleanSource: 'Sabr Unified Query Engine (MySQL + SQL Server Queried Together Live — Zero Data Copying)',
+    cleanRule: 'SELECT r.region_name, p.product_line, (SUM(m.net_rev) - SUM(s.cogs) - SUM(s.freight_adj)) / SUM(m.net_rev) FROM mysql.orders_db.mapped_orders m JOIN sqlserver.finance_db.mapped_ledger s ON m.acct_id = s.acct_id ...',
+    cleanOutput: '“Midwest Q3 net margin dropped 2.42% (from 36.80% to 34.38%). Our AI Agent queried MySQL Orders and SQL Server Finance simultaneously and identified two causes: (1) -1.65% from cold-chain freight surcharges (`ADJ_CD=7` in SQL Server) on Product Line BIO-400 in Chicago and Detroit, and (2) -0.77% from tier discounts (`DISC_TIER_3` in MySQL).”',
     cleanMetrics: [
-      { label: 'Tables Joined Accurately', val: '4 Disjointed Tables Linked' },
-      { label: 'Cryptic Fields Mapped', val: '18 Columns Defined in Plain English' },
-      { label: 'Report Generation Time', val: '1.4 Seconds (100% Verified)' }
+      { label: 'Live Cross-DB Join', val: 'MySQL + SQL Server in 1 Query' },
+      { label: 'Data Migration Required', val: 'Zero (Queried In-Place)' },
+      { label: 'Execution Speed', val: '1.1 Seconds (Parallel Engine)' }
     ]
   },
   customers: {
-    question: '“Which enterprise customer accounts renewing next quarter had a drop in usage over the last 30 days?”',
-    dirtySource: 'Raw Tables: CUST_MSTR_01, SUB_BILL_HIST, APP_EVT_LOG, ACCT_STATUS',
-    dirtyOutput: '“Unable to connect SUB_BILL_HIST to APP_EVT_LOG because `CUST_NO` is an integer in billing while `WORKSPACE_UID` is a UUID string in the product usage table. Also unclear if `STAT_FLG = 2` means active or paused.”',
-    dirtyError: 'WHY THE AI AGENT FAILED: The billing table and product usage table use completely different ID formats with no mapping bridge, and status flags (`STAT_FLG = 2`) are not defined.',
-    cleanSource: 'Sabr AI Mapped Layer: Billing Subscriptions ↔ Product Telemetry ↔ Account Master',
-    cleanRule: 'Bridged `CUST_NO` ↔ `WORKSPACE_UID` | Defined `STAT_FLG=2` → Active Renewal Pending | Defined Active Seat Usage Formula',
-    cleanOutput: '“3 enterprise accounts ($1.84M combined ARR) renewing in the next 60 days had a >25% drop in active usage over the last 30 days: (1) GlobalTech ($740K ARR, renews Nov 24) — active seats down 34%; (2) Vantara Health ($620K ARR, renews Dec 8) — weekly logins down 29%; (3) Northstar ($480K ARR, renews Dec 19) — API volume down 31%.”',
+    question: '“Which enterprise customer accounts renewing next quarter had a >25% drop in usage in our MySQL app database over the last 30 days?”',
+    dirtySource: 'Separate Databases: PostgreSQL (`billing_db.sub_hist`) + MySQL (`app_prod.user_events`)',
+    dirtyOutput: '“Unable to join PostgreSQL subscription records to MySQL product usage events because they are on different database servers, and `CUST_NO` (integer) does not match `WORKSPACE_UID` (string). Also unclear if `STAT_FLG = 2` means active.”',
+    dirtyError: 'WHY RAW AI FAILED: Cannot join live PostgreSQL billing tables with MySQL application tables, and ID formats (`CUST_NO` vs `WORKSPACE_UID`) and status flags are unmapped.',
+    cleanSource: 'Sabr Unified Query Engine (PostgreSQL Billing ↔ MySQL App Telemetry Bridged Live)',
+    cleanRule: 'SELECT b.account_name, b.arr_usd, u.active_seat_delta_30d FROM postgres.billing.subscriptions b JOIN mysql.app_prod.workspace_bridge w ON b.cust_no = w.cust_no JOIN mysql.app_prod.usage_summary u ...',
+    cleanOutput: '“3 enterprise accounts ($1.84M combined ARR) in PostgreSQL renewing in the next 60 days had a >25% drop in live MySQL app usage over the last 30 days: (1) GlobalTech ($740K ARR, renews Nov 24) — active seats down 34%; (2) Vantara Health ($620K ARR, renews Dec 8) — weekly logins down 29%; (3) Northstar ($480K ARR, renews Dec 19) — API calls down 31%.”',
     cleanMetrics: [
       { label: 'At-Risk Renewals Found', val: '$1.84M Across 3 Accounts' },
-      { label: 'ID Mismatches Solved', val: 'Billing ID ↔ Product UUID Bridged' },
+      { label: 'Databases Queried Live', val: 'PostgreSQL + MySQL Joined' },
       { label: 'AI Agent Action', val: 'Auto-Scheduled Weekly Alert' }
     ]
   },
   operations: {
-    question: '“Show our current inventory backlog by warehouse and flag any items where supplier lead time exceeds current stock days.”',
-    dirtySource: 'Raw Tables: WH_STK_BAL, PO_LINE_ITEMS, VND_LEAD_TBL, SKU_XREF',
-    dirtyOutput: '“Table `WH_STK_BAL` lists `QTY_A`, `QTY_B`, and `QTY_R`. It is not defined which column represents sellable stock on hand versus reserved or damaged inventory. Join to `PO_LINE_ITEMS` produced duplicate rows.”',
-    dirtyError: 'WHY THE AI AGENT FAILED: Undocumented quantity columns (`QTY_A` vs `QTY_R`) and a many-to-many join trap between warehouse stock and open purchase orders.',
-    cleanSource: 'Sabr AI Mapped Layer: Warehouse Stock ↔ Open Purchase Orders ↔ Supplier Lead Times',
-    cleanRule: 'Defined `QTY_A - QTY_R` → Net Sellable Stock | Mapped `VND_LT_DAYS` → Verified Lead Time | Fixed 1-to-Many PO Join',
-    cleanOutput: '“Across 4 warehouses, 14 high-velocity SKUs have fewer days of sellable stock (`QTY_A - QTY_R`) than their supplier’s current lead time: Dallas Warehouse has 6 SKUs at risk ($410K backlog exposure, 9 days stock vs. 18-day lead time), and Newark Warehouse has 8 SKUs at risk ($530K exposure).”',
+    question: '“Compare live customer orders in MySQL against warehouse stock in SQL Server and flag any items where supplier lead time exceeds stock days.”',
+    dirtySource: 'Separate Databases: MySQL (`ecom_db.open_orders`) + SQL Server (`wms_db.wh_stk_bal`)',
+    dirtyOutput: '“Warehouse table `WH_STK_BAL` in SQL Server lists `QTY_A`, `QTY_B`, and `QTY_R`, which are not defined. Furthermore, open customer orders sit in MySQL and cannot be queried alongside SQL Server inventory without building an ETL pipeline.”',
+    dirtyError: 'WHY RAW AI FAILED: Undocumented quantity columns (`QTY_A` vs `QTY_R`), no way to query MySQL and SQL Server together on the fly, and SKU codes differ across systems.',
+    cleanSource: 'Sabr Unified Query Engine (MySQL Open Orders ↔ SQL Server Warehouse Inventory)',
+    cleanRule: 'SELECT i.warehouse_loc, i.sku_code, (i.qty_on_hand - i.qty_reserved - o.open_order_qty) AS net_available, v.lead_time_days FROM sqlserver.wms.inventory i JOIN mysql.ecom.open_orders o ON i.sku_id = o.sku_id ...',
+    cleanOutput: '“Across 4 warehouses, 14 high-velocity SKUs have fewer days of sellable stock (`QTY_A - QTY_R` in SQL Server minus open MySQL orders) than their supplier’s current lead time: Dallas Warehouse has 6 SKUs at risk ($410K order exposure, 9 days stock vs. 18-day lead time), and Newark Warehouse has 8 SKUs at risk ($530K exposure).”',
     cleanMetrics: [
       { label: 'Stockout Risk Flagged', val: '14 SKUs ($940K Order Value)' },
-      { label: 'Ambiguous Columns Fixed', val: 'QTY_A / QTY_B / QTY_R Defined' },
-      { label: 'Join Accuracy', val: 'Zero Double-Counting' }
+      { label: 'Cross-Database Join', val: 'MySQL Orders + SQL Server WMS' },
+      { label: 'Read-Only Guardrail', val: 'Zero Load on Production DBs' }
     ]
   },
   board: {
-    question: '“Run our monthly Executive KPI Report comparing actuals vs. budget across Finance, Sales, and Operations.”',
-    dirtySource: 'Raw Tables: FIN_GL_SUM, SLS_PIPE_RAW, OPS_KPI_2026, BUD_TARGET_TBL',
-    dirtyOutput: '“Finance table `FIN_GL_SUM` reports October revenue as $4.86M (accrual), while `SLS_PIPE_RAW` reports $5.19M (bookings). Because fiscal calendar periods and revenue definitions are not mapped between tables, I cannot produce a unified variance report.”',
-    dirtyError: 'WHY THE AI AGENT FAILED: Different department tables use different date calendars, different currency/unit scales, and unaligned KPI definitions.',
-    cleanSource: 'Sabr AI Mapped Layer: Unified Company Data Dictionary Across Finance, Sales & Operations',
-    cleanRule: 'Aligned Fiscal Calendar Across All Tables | Defined Recognized Revenue vs. Bookings | Mapped Budget Codes to GL Accounts',
-    cleanOutput: '“October Recognized Revenue reached $4.86M (+18.4% YoY, +$112K above budget), New Bookings totaled $5.19M (106% of quota), and Operating Profit hit $1.28M (26.4% margin). Every figure is pulled directly from your mapped database tables using your official board formulas.”',
+    question: '“Run our monthly Executive KPI Report combining Finance (SQL Server), Sales Subscriptions (PostgreSQL), and Live App Activity (MySQL).”',
+    dirtySource: 'Separate Databases: SQL Server (`FIN_GL`) + PostgreSQL (`SLS_PIPE`) + MySQL (`APP_METRICS`)',
+    dirtyOutput: '“Each department stores data in a different database engine with different fiscal calendars, account IDs, and revenue definitions. Generating a combined report requires manual CSV exports and 5 days of spreadsheet reconciliation.”',
+    dirtyError: 'WHY RAW AI FAILED: Three separate database engines (MySQL, PostgreSQL, SQL Server) with unmapped schemas and conflicting KPI formulas.',
+    cleanSource: 'Sabr Unified Catalog & AI Agent Layer Across SQL Server, PostgreSQL & MySQL',
+    cleanRule: 'EXECUTE sabr_agent.compile_executive_kpi_report(period => \'2026-10\', sources => [\'mysql\', \'postgres\', \'sqlserver\']);',
+    cleanOutput: '“October Recognized Revenue (SQL Server) reached $4.86M (+18.4% YoY, +$112K above budget), New Bookings (PostgreSQL) totaled $5.19M (106% of quota), and Monthly Active Enterprise Seats (MySQL) grew +22.1%. Every figure was queried live in parallel across all three databases using your locked board formulas.”',
     cleanMetrics: [
-      { label: 'Monthly Report Prep', val: 'Cut from 5 Days → Instant' },
-      { label: 'KPI Definitions Locked', val: '100% Aligned Across Departments' },
-      { label: 'Audit Trail', val: 'Every Number Traced to Exact Field' }
+      { label: 'Monthly Report Prep', val: 'Cut from 5 Days → 2 Seconds' },
+      { label: 'Databases Unified', val: 'MySQL + Postgres + SQL Server' },
+      { label: 'ETL Pipelines Needed', val: 'Zero (Federated Live Query)' }
     ]
   }
 };
@@ -191,7 +191,7 @@ function initLLMSandbox() {
   renderScenario('margin');
 }
 
-/* 4. Interactive Database Mapping & Reporting ROI Calculator */
+/* 4. Interactive Database Mapping, Federated Query & AI Agent ROI Calculator */
 function initROICalculator() {
   const sourcesInput = document.getElementById('roi-sources');
   const engineersInput = document.getElementById('roi-engineers');
@@ -211,17 +211,18 @@ function initROICalculator() {
     const dVal = document.getElementById('roi-docs-val');
     const qVal = document.getElementById('roi-queries-val');
 
-    if (sVal) sVal.textContent = `${sources} Databases`;
+    if (sVal) sVal.textContent = `${sources} Databases (MySQL, Postgres, etc.)`;
     if (eVal) eVal.textContent = `${engineers} Analysts / Engineers`;
     if (dVal) dVal.textContent = `${tablesCount.toLocaleString()} Disjointed Tables`;
-    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k AI Reports & Queries/mo`;
+    if (qVal) qVal.textContent = `${queriesK.toLocaleString()}k AI Agent Queries/mo`;
 
-    const annualEngSaved = Math.round(engineers * 165000 * 0.42);
-    const contextComputeSaved = Math.round((queriesK * 12 * 1.45) + (sources * 6800) + (tablesCount * 310));
-    const totalAnnualBenefit = annualEngSaved + contextComputeSaved;
+    const annualEngSaved = Math.round(engineers * 165000 * 0.44);
+    // Savings from avoiding expensive ETL/data warehouse migration + instant reporting
+    const etlAndQuerySaved = Math.round((queriesK * 12 * 1.45) + (sources * 9500) + (tablesCount * 320));
+    const totalAnnualBenefit = annualEngSaved + etlAndQuerySaved;
 
     const estInvestment = 85000 + (sources * 4500);
-    const paybackMonths = Math.max(1.4, (estInvestment / (totalAnnualBenefit / 12))).toFixed(1);
+    const paybackMonths = Math.max(1.3, (estInvestment / (totalAnnualBenefit / 12))).toFixed(1);
 
     const outSavings = document.getElementById('roi-out-savings');
     const outEngHours = document.getElementById('roi-out-hours');
@@ -230,17 +231,17 @@ function initROICalculator() {
     const outTier = document.getElementById('roi-recommended-tier');
 
     if (outSavings) outSavings.textContent = '$' + totalAnnualBenefit.toLocaleString();
-    if (outEngHours) outEngHours.textContent = Math.round(engineers * 2080 * 0.42).toLocaleString() + ' hrs/yr';
+    if (outEngHours) outEngHours.textContent = Math.round(engineers * 2080 * 0.44).toLocaleString() + ' hrs/yr';
     if (outPayback) outPayback.textContent = paybackMonths + ' Months';
     if (outMultiple) outMultiple.textContent = (totalAnnualBenefit / estInvestment).toFixed(1) + 'x First-Year Return';
 
     if (outTier) {
       if (sources <= 5) {
-        outTier.textContent = 'Recommended Starting Point: Tier 1 (14-Day Database Field Mapping Audit — $18,500)';
+        outTier.textContent = 'Recommended Starting Point: Tier 1 (14-Day Database Mapping & AI Agent Audit — $18,500)';
       } else if (sources <= 14) {
-        outTier.textContent = 'Recommended Starting Point: 14-Day Mapping Audit → Tier 2 Complete Database Mapping & AI Agent Setup ($75k–$125k)';
+        outTier.textContent = 'Recommended Starting Point: 14-Day Audit → Tier 2 Complete Field Mapping, Unified Query Architecture & AI Agents ($75k–$140k)';
       } else {
-        outTier.textContent = 'Recommended Starting Point: Full Multi-Database Mapping + Ongoing Schema Maintenance';
+        outTier.textContent = 'Recommended Starting Point: Multi-Database Query Architecture + Custom AI Agents + Ongoing Support';
       }
     }
   }
@@ -252,7 +253,7 @@ function initROICalculator() {
   updateROI();
 }
 
-/* 5. Contact & Database Mapping Assessment Form Handler */
+/* 5. Contact & Database Mapping / AI Agent Assessment Form Handler */
 function initContactForms() {
   const forms = document.querySelectorAll('.sabr-contact-form');
   if (forms.length === 0) return;
@@ -287,10 +288,10 @@ function initContactForms() {
         workEmail: formData.get('work_email') || '',
         company: formData.get('company') || '',
         role: formData.get('role') || '',
-        engagementTier: formData.get('engagement_tier') || '14-Day Database Field Mapping Assessment',
-        primaryGoal: formData.get('primary_goal') || 'Map Disjointed Database Fields & Connect AI Agent for Reporting',
+        engagementTier: formData.get('engagement_tier') || '14-Day Database Mapping & AI Agent Audit',
+        primaryGoal: formData.get('primary_goal') || 'Map Database Fields, Set Up Unified Query Layer & Deploy AI Agents',
         dataVolume: formData.get('data_volume') || '',
-        dataSources: sources.length ? sources : ['Company Databases & Disjointed Tables'],
+        dataSources: sources.length ? sources : ['MySQL / PostgreSQL / SQL Server Databases'],
         notes: formData.get('project_notes') || ''
       };
 
@@ -317,10 +318,10 @@ function initContactForms() {
               Thank you, ${escapeHtml(submission.fullName)} — Sabr Systems has received your inquiry.
             </h4>
             <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              A Senior Partner at Sabr Systems will review the database mapping scope for <strong>${escapeHtml(submission.company)}</strong> (${escapeHtml(submission.dataSources.join(', '))}) and reach out to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours.
+              A Senior Partner at Sabr Systems will review the database mapping and AI agent architecture scope for <strong>${escapeHtml(submission.company)}</strong> (${escapeHtml(submission.dataSources.join(', '))}) and reach out to <strong>${escapeHtml(submission.workEmail)}</strong> within 4 business hours.
             </p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Database Mapping & AI Agent Inquiry [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
+              <a href="mailto:intake@sabrsystems.com?subject=${encodeURIComponent('Sabr AI Database Mapping & AI Agent Setup [' + submission.id + '] - ' + submission.company)}&body=${encodeURIComponent(
                 'Reference ID: ' + submission.id + '\n' +
                 'Name: ' + submission.fullName + ' (' + submission.role + ')\n' +
                 'Company: ' + submission.company + '\n' +
