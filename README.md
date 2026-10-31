@@ -2,7 +2,7 @@
 
 **AI Data Readiness, High-Speed Analytical Architecture & AI Agents**, by Sabr Systems LLC.
 
-Live site: https://sabr-ai.vercel.app
+Live site: https://sabrsystems.com (also https://sabr-ai.vercel.app)
 
 ## What we sell
 
