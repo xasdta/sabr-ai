@@ -45,7 +45,7 @@ form.addEventListener('submit',async e=>{
   const out=await res.json().catch(()=>({}));
   if(res.status===400){note.textContent=out.error||'Please check the form and try again.';btn.disabled=false;btn.textContent='Submit & Schedule Your Call →';return;}
   if(!res.ok)throw new Error(out.error);
-  form.innerHTML='<h3>Thank you, '+data.name.split(' ')[0].replace(/[<>&"]/g,'')+'. Your request is in.</h3><p class="form-done">A Senior Partner at Sabr Systems will reply to <b></b> within 4 business hours to schedule your call. Questions in the meantime: intake@sabrsystems.com</p>';
+  form.innerHTML='<h3>Thank you, '+data.name.split(' ')[0].replace(/[<>&"]/g,'')+'. Your request is in.</h3><p class="form-done">A Senior Partner at Sabr Systems will reply to <b></b> to schedule your call. Questions in the meantime: intake@sabrsystems.com</p>';
   form.querySelector('.form-done b').textContent=data.email;
  }catch{
   const body=['Name: '+data.name,'Work email: '+data.email,'Company: '+data.company,'Role: '+data.role,'Data today: '+data.data,'','What we want AI agents to do:',data.goal].join('\n');
