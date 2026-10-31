@@ -33,12 +33,24 @@ function show(i){const d=D[i];document.querySelectorAll('.tab').forEach(t=>t.set
  $('d-q').textContent=d.q;$('d-bs').textContent=d.bs;$('d-bo').textContent=d.bo;$('d-bw').textContent=d.bw;
  $('d-gs').textContent=d.gs;$('d-go').textContent=d.go;$('d-ga').textContent=d.ga;}
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>show(+t.dataset.i)));show(0);
-// Contact form: opens the visitor's email app with their details pre-filled
+// Audit form: saves the request via /api/lead; falls back to a pre-filled email if that fails
 const form=document.querySelector('.form');
-form.addEventListener('submit',e=>{
+form.addEventListener('submit',async e=>{
  e.preventDefault();
- const f=form.elements,v=n=>f[n].value.trim();
- const body=['Name: '+v('name'),'Work email: '+v('email'),'Company: '+v('company'),'Role: '+v('role'),'Data today: '+v('data'),'','What we want AI agents to do:',v('goal')].join('\n');
- window.location.href='mailto:intake@sabrsystems.com?subject='+encodeURIComponent('Sabr AI 14-Day Audit Request: '+v('company'))+'&body='+encodeURIComponent(body);
- form.querySelector('.form-note').textContent='Your email app should open with your details filled in. If it doesn’t, email intake@sabrsystems.com directly.';
+ const f=form.elements,v=n=>f[n].value.trim(),btn=form.querySelector('button'),note=form.querySelector('.form-note');
+ const data={name:v('name'),email:v('email'),company:v('company'),role:v('role'),data:v('data'),goal:v('goal'),website:v('website')};
+ btn.disabled=true;btn.textContent='Sending…';
+ try{
+  const res=await fetch('/api/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)});
+  const out=await res.json().catch(()=>({}));
+  if(res.status===400){note.textContent=out.error||'Please check the form and try again.';btn.disabled=false;btn.textContent='Submit & Schedule Your Call →';return;}
+  if(!res.ok)throw new Error(out.error);
+  form.innerHTML='<h3>Thank you, '+data.name.split(' ')[0].replace(/[<>&"]/g,'')+'. Your request is in.</h3><p class="form-done">A Senior Partner at Sabr Systems will reply to <b></b> within 4 business hours to schedule your call. Questions in the meantime: intake@sabrsystems.com</p>';
+  form.querySelector('.form-done b').textContent=data.email;
+ }catch{
+  const body=['Name: '+data.name,'Work email: '+data.email,'Company: '+data.company,'Role: '+data.role,'Data today: '+data.data,'','What we want AI agents to do:',data.goal].join('\n');
+  window.location.href='mailto:intake@sabrsystems.com?subject='+encodeURIComponent('Sabr AI 14-Day Audit Request: '+data.company)+'&body='+encodeURIComponent(body);
+  note.textContent='We couldn’t send that automatically, so your email app should open with your details filled in. You can also email intake@sabrsystems.com directly.';
+  btn.disabled=false;btn.textContent='Submit & Schedule Your Call →';
+ }
 });

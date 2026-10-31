@@ -122,3 +122,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 .eyebrow{font-family:"IBM Plex Mono",monospace}.eyebrow::before{content:"// "}
 .site-footer{color:#7C98B1;border-top-color:#16324F}.site-footer .logo{color:#E8F1F8}
 .form-note{font-size:13px;color:var(--ink-3);text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-done{color:var(--ink-2);font-size:15px}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}

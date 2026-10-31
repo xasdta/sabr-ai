@@ -1,0 +1,11 @@
+{
+  "name": "sabr-ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "leads": "node --env-file=.env.local scripts/leads.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.2"
+  }
+}

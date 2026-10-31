@@ -7,16 +7,17 @@
 
 ---
 
-## 1. Executive Thesis: The Two Requirements for Enterprise AI LLMs & Agents
+## 1. Executive Thesis: The Two Requirements for Enterprise LLMs & Agents
 
-To use AI LLMs and agents to report, answer questions, and automate functions across a corporation, companies need two foundational layers that standard databases lack:
-1. **Business Meaning (Field Mapping & Cross-Database Federation):** AI cannot interpret cryptic column abbreviations (`VAL_ADJ_2`, `ST_CD=4`) or isolated database servers (MySQL vs. Postgres vs. SQL Server). Every field, join path, and KPI formula must be mapped into a unified catalog.
-2. **Analytical Speed & Isolation (High-Speed Columnar Analytical Engine):** Even when data is already clean and mapped, pointing AI LLMs directly at transactional row-based databases causes multi-million-row analytical queries to time out and slows down customer-facing applications. Transforming data into a dedicated, columnar analytical engine enables **sub-second (`<50ms`) AI queries**, **continuous real-time rollups**, and **autonomous agent workflows** with zero load on production systems.
+To use LLMs and AI agents to report, answer questions, and automate functions across a company, businesses need two foundational layers that standard databases lack:
+1. **Business Meaning (Field Mapping & Cross-Database Connection):** AI cannot interpret cryptic column abbreviations (`VAL_ADJ_2`, `ST_CD=4`) or how tables relate across isolated database servers (MySQL vs. PostgreSQL vs. SQL Server). Every field, table relationship, join path, and KPI formula must be mapped into a unified catalog.
+2. **Analytical Speed & Isolation (High-Speed Columnar Analytical Store):** Even when data is already clean and mapped, pointing LLMs directly at transactional row-based databases causes multi-million-row analytical queries to time out and slows down customer-facing applications. Transferring data into a dedicated columnar analytical store, in the right format for LLM queries, enables **millisecond-level AI queries**, **continuously updated rollups**, and **AI agents that act on new data within seconds**, while LLM and agent queries stay off production systems.
 
 ---
 
-## 2. Our Three-Layer Technical Architecture
+## 2. Our Four-Stage Technical Architecture
 
-- **Layer 1 — Semantic Field Mapping & KPI Dictionary:** Translates cryptic database columns and status codes into plain English and locks in official company KPI formulas.
-- **Layer 2 — Federated Live Query + High-Speed Columnar Analytical Engine:** Joins live tables across MySQL, PostgreSQL, SQL Server, and Oracle in place AND transforms high-volume datasets into a sub-second columnar analytical store built for heavy AI LLM workloads.
-- **Layer 3 — AI LLM Data Access, Reporting & Corporate Automation:** Deploys role-secured AI chat/reporting interfaces for employees and autonomous background AI agents that trigger operational workflows across the company.
+- **Stage 1 — Map & Define:** Cleans up and maps cryptic database columns, status codes, and table relationships into plain English and locks in official company KPI formulas.
+- **Stage 2 — Connect:** A unified, read-only query layer that joins live tables across MySQL, PostgreSQL, SQL Server, and Oracle in place.
+- **Stage 3 — Transfer:** Streams mapped data into a high-speed columnar analytical store built for heavy LLM workloads.
+- **Stage 4 — Automate:** Deploys role-secured AI data access and reporting for employees, plus AI agents that monitor incoming data and trigger business workflows automatically.
