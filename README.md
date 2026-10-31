@@ -29,7 +29,9 @@ Single-page static site; no build step.
 |---|---|
 | `index.html` | The whole site: hero, before/after, 4-stage architecture, Option A/B, AI agents, demo, pricing, team, audit form |
 | `assets/css/site.css` | Styles (plain CSS, design tokens on `:root`) |
-| `assets/js/site.js` | Demo scenario tabs and the audit form (opens a pre-filled email to intake@sabrsystems.com) |
+| `assets/js/site.js` | Hero data-journey animation, demo scenario tabs, and the audit form (posts to `/api/lead`) |
+| `api/lead.js` | Saves each audit request to private Vercel Blob storage and emails intake@sabrsystems.com via Resend |
+| `assets/img/og.png` | Social preview image (1200×630) |
 | `vercel.json` | Redirects the old multi-page URLs to sections of the homepage |
 
 Preview locally:
