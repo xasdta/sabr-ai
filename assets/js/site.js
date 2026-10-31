@@ -54,3 +54,18 @@ form.addEventListener('submit',async e=>{
   btn.disabled=false;btn.textContent='Submit & Schedule Your Call →';
  }
 });
+
+// Hero data journey: light each station in turn, send a packet down the pipe, then play that card's picture
+{
+  const st=[...document.querySelectorAll('.jp-flow [data-st]')],pipes=[...document.querySelectorAll('.jp-flow [data-pipe]')];
+  const DWELL=[1600,3000,3200,3200];
+  const restart=(el,cls)=>{el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)};
+  let s=0;
+  function step(){
+    st.forEach((e,i)=>{e.classList.toggle('jp-on',i===s);if(i!==s)e.classList.remove('jp-play')});
+    if(s===0)st.forEach(e=>e.classList.remove('jp-seen'));
+    st[s].classList.add('jp-seen');if(s>0)restart(st[s],'jp-play');
+    setTimeout(()=>{if(s<3){restart(pipes[s],'jp-go');s++;setTimeout(step,900)}else{s=0;setTimeout(step,600)}},DWELL[s]);
+  }
+  if(st.length&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-jp');step()}
+}

@@ -29,31 +29,61 @@
 
 <main>
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
+  <div class="wrap">
+    <div class="hero-top">
       <p class="eyebrow">AI Data Readiness · High-Speed Analytical Architecture · AI Agents</p>
       <h1>We Get Your Company’s Data Ready for AI — <em>And Build the Agents That Put It to Work.</em></h1>
-      <p class="lede">Most companies have valuable data sitting in databases, but LLMs can’t use it: fields are undefined, tables don’t link, and production databases are too slow for AI queries. We <strong>clean up and map every field and table relationship</strong> so LLMs understand your data, <strong>transfer it into a high-speed analytical store</strong> in the right format for LLM queries, and <strong>deploy AI agents</strong> that automate your business within seconds of new data arriving.</p>
+      <p class="lede">Most companies have valuable data sitting in databases, but LLMs can’t use it: fields are undefined, tables don’t link, and production databases are too slow for AI queries.</p>
+    </div>
+
+    <div class="jp-flow">
+      <div class="jp-src" data-st="0">
+        <p class="jp-k">Your databases</p>
+        <div class="jp-cyls" aria-hidden="true"><div class="jp-cyl"><svg viewBox="0 0 100 46"><path d="M2 9 v28 a48 8 0 0 0 96 0 v-28" class="jp-cy-b"/><ellipse cx="50" cy="9" rx="48" ry="8" class="jp-cy-t"/></svg><span>MySQL</span></div><div class="jp-cyl"><svg viewBox="0 0 100 46"><path d="M2 9 v28 a48 8 0 0 0 96 0 v-28" class="jp-cy-b"/><ellipse cx="50" cy="9" rx="48" ry="8" class="jp-cy-t"/></svg><span>PostgreSQL</span></div><div class="jp-cyl"><svg viewBox="0 0 100 46"><path d="M2 9 v28 a48 8 0 0 0 96 0 v-28" class="jp-cy-b"/><ellipse cx="50" cy="9" rx="48" ry="8" class="jp-cy-t"/></svg><span>SQL Server</span></div></div>
+        <ul class="jp-pains"><li>Undefined fields</li><li>Unlinked tables</li><li>Too slow for AI</li></ul>
+      </div>
+      <div class="jp-pipe" data-pipe="0" aria-hidden="true"><span class="jp-pk jp-raw">STAT_CD</span></div>
+      <article class="jp-card" data-st="1">
+        <div class="jp-art jp-map" aria-hidden="true">
+          <div class="jp-row"><code class="jp-raw">TRN_AMT_02</code><span class="jp-arrow">→</span><span class="jp-clean">Net Invoice Amount</span></div>
+          <div class="jp-row jp-d2"><code class="jp-raw">STAT_CD=4</code><span class="jp-arrow">→</span><span class="jp-clean">Order Shipped</span></div>
+          <div class="jp-row jp-d3"><code class="jp-raw">CUST_NO</code><span class="jp-arrow">↔</span><span class="jp-clean">WORKSPACE_UID</span></div>
+        </div>
+        <p class="jp-k"><span class="jp-num">1</span>Map it</p>
+        <h3>We clean up and map every field and table relationship</h3>
+        <p>so LLMs understand what your data means and how your tables connect.</p>
+      </article>
+      <div class="jp-pipe" data-pipe="1" aria-hidden="true"><span class="jp-pk jp-clean">Order Shipped</span></div>
+      <article class="jp-card" data-st="2">
+        <div class="jp-art jp-race" aria-hidden="true">
+          <div class="jp-lane"><span class="jp-ln">Live app database</span><div class="jp-track"><div class="jp-fill jp-slow"></div></div><span class="jp-res jp-bad">timed out ✗</span></div>
+          <div class="jp-lane"><span class="jp-ln">Analytical store</span><div class="jp-track"><div class="jp-fill jp-fast"></div></div><span class="jp-res jp-good">42 ms ✓</span></div>
+          <p class="jp-cap">Scanning 25M rows for a 12-month trend</p>
+        </div>
+        <p class="jp-k"><span class="jp-num">2</span>Move it</p>
+        <h3>We transfer it into a high-speed analytical store</h3>
+        <p>in the right format for LLM queries, so your live databases are never slowed down.</p>
+      </article>
+      <div class="jp-pipe" data-pipe="2" aria-hidden="true"><span class="jp-pk jp-clean">42 ms</span></div>
+      <article class="jp-card" data-st="3">
+        <div class="jp-art jp-feed" aria-hidden="true">
+          <div class="jp-ev"><span class="jp-dot"></span>New order in MySQL<i>0.0s</i></div>
+          <div class="jp-ev jp-e2"><span class="jp-dot"></span>Stock below lead time<i>0.4s</i></div>
+          <div class="jp-ev jp-e3 jp-ok"><span class="jp-dot"></span>Purchase order drafted<i>1.1s</i></div>
+        </div>
+        <p class="jp-k"><span class="jp-num">3</span>Automate it</p>
+        <h3>We deploy AI agents</h3>
+        <p>that automate your business within seconds of new data arriving.</p>
+      </article>
+    </div>
+    <p class="jp-illus">Illustrative example: field names, timings and actions vary by company.</p>
+
+    <div class="hero-bottom">
       <div class="ctas">
         <a class="btn btn-primary btn-lg" href="#audit">Book Your 14-Day Data &amp; AI Audit →</a>
         <a class="btn btn-ghost btn-lg" href="#architecture">See How It Works</a>
       </div>
       <p class="fine">Deployed 100% inside your private cloud · Read-only access to production · Mutual NDA before any schema review</p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="flow">
-        <div class="flow-title">Our Complete Data-to-AI Service</div>
-        <div class="node node-src"><span class="node-k">Your Databases</span><b>MySQL · PostgreSQL · SQL Server · Oracle</b><span class="node-d">Cryptic fields · disjointed tables</span></div>
-        <div class="arrow">↓</div>
-        <div class="node"><span class="node-n">1</span><span class="node-k">Map &amp; Define</span><b>Clean up &amp; map every field</b><span class="node-d">Columns, status codes, table relationships, KPI formulas</span></div>
-        <div class="arrow">↓</div>
-        <div class="node"><span class="node-n">2</span><span class="node-k">Connect</span><b>One live cross-database catalog</b><span class="node-d">Join MySQL, PostgreSQL &amp; SQL Server in one query</span></div>
-        <div class="arrow">↓</div>
-        <div class="node"><span class="node-n">3</span><span class="node-k">Transfer</span><b>High-speed analytical store</b><span class="node-d">Columnar format built for LLM queries · millisecond scans</span></div>
-        <div class="arrow">↓</div>
-        <div class="node node-out"><span class="node-n">4</span><span class="node-k">Automate</span><b>LLMs + AI agents</b><span class="node-d">Reports, self-serve answers &amp; workflows triggered in seconds</span></div>
-      </div>
     </div>
   </div>
 </section>

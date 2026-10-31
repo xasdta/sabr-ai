@@ -18,18 +18,8 @@ h1{font:var(--h1-font);letter-spacing:var(--h-track)}h1 em{font-style:var(--em-s
 h2{font:var(--h2-font);letter-spacing:var(--h-track)}
 h3{font:600 19px/1.3 var(--sans)}
 .hero{padding:80px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center}
 .lede{font-size:19px;color:var(--ink-2);margin:24px 0 30px}.lede strong{color:var(--ink);font-weight:600}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}.fine{margin-top:18px;font-size:13.5px;color:var(--ink-3)}
-.flow{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-.flow-title{font:600 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
-.node{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:calc(var(--radius) - 4px);padding:12px 14px 12px 14px}
-.node-n{grid-row:span 3;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 13px/26px var(--sans);text-align:center}
-.node-src,.node-src .node-k{grid-template-columns:1fr}.node-k{font:600 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
-.node b{font-size:15px;font-weight:600}.node-d{font-size:13px;color:var(--ink-3)}
-.node-src{background:var(--bad-soft);border-color:transparent}.node-src .node-k{color:var(--bad)}
-.node-out{background:var(--accent-soft);border-color:transparent}
-.arrow{text-align:center;color:var(--ink-3);font-size:14px;line-height:1;padding:4px 0}
 .sec{padding:96px 0}.sec-alt{background:var(--alt-bg)}
 .sec-head{max-width:780px;margin-bottom:48px}.sec-head p:not(.eyebrow){font-size:18px;color:var(--ink-2);margin-top:14px}
 .pill{display:inline-block;font:600 11.5px var(--mono);padding:4px 9px;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em}
@@ -97,7 +87,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 .foot{display:flex;justify-content:space-between;gap:32px;padding:44px 24px 56px;flex-wrap:wrap}.foot p{max-width:560px;font-size:14px;margin-top:12px}.copy{align-self:end;font-size:13px}
 @media(max-width:960px){
  .nav-links{display:none}.hero{padding:52px 0 60px}
- .hero-grid,.ba,.paths,.why,.cta-grid,.compare{grid-template-columns:1fr}
+ .ba,.paths,.why,.cta-grid,.compare{grid-template-columns:1fr}
  .agents,.tiers{grid-template-columns:1fr}
  .stage{grid-template-columns:1fr;gap:14px;padding:24px}.stage-ex{align-self:stretch}
  .sec{padding:64px 0}.guarantees{grid-template-columns:1fr}
@@ -115,9 +105,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 .hero .lede{color:#A9C1D6}.hero .lede strong{color:#fff}.hero .fine{color:#7C98B1}.hero .eyebrow,.hero h1 em{color:#5CC8E6}
 .hero .btn-ghost{color:#E8F1F8;box-shadow:inset 0 0 0 1px #2C4A66}.hero .btn-ghost:hover{background:#12304D}
 .hero .btn-primary{background:#5CC8E6;color:#0B1F33}
-.flow{background:rgba(255,255,255,.04);border:1px dashed #2C4A66;box-shadow:none}.flow-title{color:#7C98B1}
-.node{background:#0F2A44;border-color:#2C4A66;color:#E8F1F8}.node-d{color:#8FA9C0}.node-k{color:#5CC8E6}.node-n{background:#5CC8E6;color:#0B1F33}
-.node-src{background:rgba(178,58,58,.18)}.node-src .node-k{color:#FF9A9A}.node-out{background:rgba(92,200,230,.16)}.arrow{color:#5CC8E6}
 .stage{border-left:4px solid var(--accent)}.stage-n::before{content:"/";color:var(--line-strong)}
 .eyebrow{font-family:"IBM Plex Mono",monospace}.eyebrow::before{content:"// "}
 .site-footer{color:#7C98B1;border-top-color:#16324F}.site-footer .logo{color:#E8F1F8}
@@ -125,3 +112,74 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .form-done{color:var(--ink-2);font-size:15px}
 .btn:disabled{opacity:.6;cursor:wait;transform:none}
+/* Hero data journey: databases → map → move → automate, played in sequence by site.js */
+.hero-top{max-width:900px;margin:0 auto;text-align:center}.hero-top .lede{margin:22px auto 0;max-width:42em}
+.hero-bottom{display:grid;justify-items:center;text-align:center}.hero-bottom .ctas{justify-content:center}
+.jp-flow{display:grid;grid-template-columns:140px 40px 1fr 40px 1fr 40px 1fr;margin:44px 0 10px}
+.jp-src,.jp-card{background:rgba(15,42,68,.7);border:1px solid #2C4A66;border-radius:14px;transition:border-color .4s,box-shadow .4s,opacity .4s}
+.js-jp .jp-src,.js-jp .jp-card{opacity:.6}
+.js-jp .jp-seen{opacity:1}
+.jp-src.jp-on,.jp-card.jp-on{opacity:1;border-color:#5CC8E6;box-shadow:0 0 0 1px #5CC8E6 inset,0 0 26px rgba(92,200,230,.25)}
+.jp-src{padding:16px 14px;display:grid;align-content:start;gap:8px}
+.jp-cyls{display:grid;gap:8px}
+.jp-cyl{position:relative;height:40px}.jp-cyl svg{position:absolute;inset:0;width:100%;height:100%}
+.jp-cyl span{position:relative;display:block;text-align:center;padding-top:16px;color:#E8F1F8;font:600 12.5px var(--sans)}
+.jp-cy-b{fill:#0F2A44;stroke:#3A5F80;stroke-width:1.5}.jp-cy-t{fill:#16395A;stroke:#3A5F80;stroke-width:1.5}
+.jp-pains{list-style:none;margin-top:8px;display:grid;gap:5px}
+.jp-pains li{font:600 10.5px var(--mono);color:#FF8F8F;padding-left:14px;position:relative}.jp-pains li::before{content:"✗";position:absolute;left:0}
+.jp-pipe{position:relative;align-self:center;height:3px;margin:0 4px;background:repeating-linear-gradient(90deg,#4A7398 0 6px,transparent 6px 12px);background-size:12px 3px;animation:jp-dashx 1s linear infinite}
+@keyframes jp-dashx{to{background-position:12px 0}}
+.jp-pk{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);font:600 9.5px var(--mono);padding:3px 6px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;z-index:2}
+.jp-pk.jp-raw{background:#3A1F2A;color:#FFB4B4;border:1px solid #FF8F8F}
+.jp-pk.jp-clean{background:#0F3550;color:#BDEBF7;border:1px solid #5CC8E6;box-shadow:0 0 12px rgba(92,200,230,.5)}
+.jp-go .jp-pk{animation:jp-travel .9s ease-in-out forwards}
+@keyframes jp-travel{0%{left:0;opacity:0}15%,85%{opacity:1}100%{left:100%;opacity:0}}
+.jp-card{padding:18px 18px 24px}
+.jp-card h3{color:#fff;font-size:18px;margin:6px 0}.jp-card>p:last-child{color:#A9C1D6;font-size:15px}
+.jp-k{font:600 11.5px var(--mono);color:#5CC8E6;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.jp-card .jp-k{margin-top:16px}
+.jp-num{width:20px;height:20px;border-radius:50%;background:#5CC8E6;color:#0B1F33;font:700 11px/20px var(--sans);text-align:center;letter-spacing:0}
+.jp-art{height:170px;background:#0B1F33;border:1px solid #1D3A57;border-radius:10px;padding:16px;display:grid;align-content:center;gap:12px;overflow:hidden}
+.jp-row{display:grid;grid-template-columns:auto 16px 1fr;align-items:center;gap:5px;font-size:13px}
+.jp-raw{background:rgba(255,143,143,.12);color:#FF8F8F;font:600 12.5px var(--mono);padding:4px 7px;border-radius:5px}
+.jp-seen .jp-raw{opacity:.45}
+.jp-arrow{color:#7C98B1;text-align:center}
+.jp-clean{color:#E8F1F8;font-weight:600;white-space:nowrap}.jp-d3 .jp-clean{color:#5CC8E6}
+.jp-play .jp-clean{animation:jp-reveal .9s ease-out both}.jp-play .jp-raw{animation:jp-dim .9s ease-out both}
+.jp-play .jp-d2 .jp-raw,.jp-play .jp-d2 .jp-clean{animation-delay:.5s}.jp-play .jp-d3 .jp-raw,.jp-play .jp-d3 .jp-clean{animation-delay:1s}
+@keyframes jp-reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes jp-dim{from{opacity:1}to{opacity:.45}}
+.jp-lane{display:grid;grid-template-columns:1fr auto;grid-template-areas:"ln res" "tr tr";gap:5px}
+.jp-ln{grid-area:ln;font:500 12px var(--mono);color:#A9C1D6}.jp-track{grid-area:tr;height:10px;background:#16324F;border-radius:999px;overflow:hidden}
+.jp-fill{height:100%;border-radius:999px;transform-origin:left}
+.jp-fast{background:#5CC8E6}.jp-slow{background:#FF8F8F;transform:scaleX(.62)}
+.jp-res{grid-area:res;font:600 12px var(--mono);justify-self:end}.jp-good{color:#6EE7B7}.jp-bad{color:#FF8F8F}
+.jp-play .jp-fast{animation:jp-fast 3s both}.jp-play .jp-slow{animation:jp-slow 3s both}
+.jp-play .jp-good{animation:jp-show 3s both}.jp-play .jp-bad{animation:jp-show-late 3s both}
+@keyframes jp-fast{0%{transform:scaleX(0)}8%,100%{transform:scaleX(1)}}
+@keyframes jp-slow{0%{transform:scaleX(0)}85%,100%{transform:scaleX(.62)}}
+@keyframes jp-show{0%,8%{opacity:0}14%,100%{opacity:1}}@keyframes jp-show-late{0%,85%{opacity:0}90%,100%{opacity:1}}
+.jp-cap{font:400 11.5px var(--mono);color:#7C98B1}
+.jp-feed{gap:9px}
+.jp-ev{display:grid;grid-template-columns:14px 1fr auto;align-items:center;gap:10px;background:#0F2A44;border:1px solid #1D3A57;border-radius:8px;padding:7px 10px;font-size:13px;color:#E8F1F8;white-space:nowrap}
+.jp-ev i{font:500 11.5px var(--mono);color:#7C98B1;font-style:normal}
+.jp-dot{width:8px;height:8px;border-radius:50%;background:#5CC8E6}.jp-ok{border-color:rgba(110,231,183,.4);color:#B7F5DA}.jp-ok .jp-dot{background:#6EE7B7}
+.jp-play .jp-ev{animation:jp-ev .5s ease-out both}.jp-play .jp-e2{animation-delay:.7s}.jp-play .jp-e3{animation-delay:1.4s}
+@keyframes jp-ev{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* before the first pass reaches a card, its picture waits in the empty state */
+.js-jp .jp-card:not(.jp-seen) .jp-clean{clip-path:inset(0 100% 0 0)}
+.js-jp .jp-card:not(.jp-seen) .jp-fill{transform:scaleX(0)}
+.js-jp .jp-card:not(.jp-seen) .jp-res,.js-jp .jp-card:not(.jp-seen) .jp-ev{opacity:0}
+.jp-illus{font:500 11.5px var(--mono);color:#7C98B1;margin:0 0 36px;text-align:right}
+@media(max-width:1060px){
+ .jp-flow{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+ .jp-pipe{justify-self:center;width:3px;height:40px;margin:4px 0;background:repeating-linear-gradient(180deg,#4A7398 0 6px,transparent 6px 12px);background-size:3px 12px;animation-name:jp-dashy}
+ .jp-pk{left:50%;top:0}.jp-go .jp-pk{animation-name:jp-travely}
+ .jp-cyls{grid-template-columns:repeat(3,1fr)}
+ .jp-pains{grid-template-columns:repeat(3,auto);justify-content:start;gap:14px}
+ .jp-illus{text-align:center}
+}
+@keyframes jp-dashy{to{background-position:0 12px}}
+@keyframes jp-travely{0%{top:0;opacity:0}15%,85%{opacity:1}100%{top:100%;opacity:0}}
+@media(max-width:520px){.jp-pains{grid-template-columns:1fr}.jp-art{padding:14px 12px}}
+@media(prefers-reduced-motion:reduce){.jp-pipe{animation:none}}
