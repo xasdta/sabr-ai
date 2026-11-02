@@ -1,9 +1,34 @@
 {
   "redirects": [
-    { "source": "/pipeline(.html)?", "destination": "/#architecture", "permanent": true },
-    { "source": "/solutions(.html)?", "destination": "/#agents", "permanent": true },
-    { "source": "/pricing(.html)?", "destination": "/#pricing", "permanent": true },
-    { "source": "/contact(.html)?", "destination": "/#audit", "permanent": true },
-    { "source": "/market-analysis(.html)?", "destination": "/", "permanent": true }
+    {
+      "source": "/pipeline(.html)?",
+      "destination": "/#architecture",
+      "permanent": true
+    },
+    {
+      "source": "/solutions(.html)?",
+      "destination": "/#agents",
+      "permanent": true
+    },
+    {
+      "source": "/pricing(.html)?",
+      "destination": "/#pricing",
+      "permanent": true
+    },
+    {
+      "source": "/contact(.html)?",
+      "destination": "/#audit",
+      "permanent": true
+    },
+    {
+      "source": "/market-analysis(.html)?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faq/?",
+      "destination": "/faq.html",
+      "permanent": true
+    }
   ]
 }

@@ -184,3 +184,25 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 @keyframes jp-travely{0%{top:0;opacity:0}15%,85%{opacity:1}100%{top:100%;opacity:0}}
 @media(max-width:520px){.jp-pains{grid-template-columns:1fr}.jp-art{padding:14px 12px}}
 @media(prefers-reduced-motion:reduce){.jp-pipe{animation:none}}
+
+/* Location, footer links, mobile FAQ link, FAQ page */
+.nav-mobile-link{display:none;font:600 15px var(--sans);text-decoration:none;color:var(--ink-2);padding:10px 12px;min-height:44px;align-items:center}
+.nav-mobile-link:hover{color:var(--ink)}
+.why-loc{margin-top:16px;font-size:15px;color:var(--ink-2);font-weight:500}
+.contact a{color:inherit}.contact-loc{font-size:15px!important}.contact-faq{font-size:15px!important}.contact-faq a{color:var(--cta-accent)}
+.foot-loc{color:#A9C1D6}.foot-contact a{color:#E8F1F8;text-decoration:none}.foot-contact a:hover{text-decoration:underline}
+.foot-side{display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px}.foot-links a{color:#E8F1F8;text-decoration:none;display:inline-block;padding:6px 0}.foot-links a:hover{text-decoration:underline}
+.faq-h1{font:var(--h2-font);letter-spacing:var(--h-track)}
+.faq-list{display:grid;gap:14px;max-width:860px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:0 22px}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;min-height:44px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font:600 22px var(--mono);color:var(--accent-text);flex:none}
+.faq-item[open] summary::after{content:"−"}
+.faq-item h2{font:600 18px/1.35 var(--sans);letter-spacing:0}
+.faq-item p{padding:0 0 22px;color:var(--ink-2);font-size:16px}
+.faq-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.faq-ghost{color:var(--cta-ink);box-shadow:inset 0 0 0 1px #2C4A66}
+@media(max-width:960px){.nav-mobile-link{display:inline-flex;margin-left:auto}.cta-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.faq-item{padding:0 16px}.faq-item h2{font-size:16.5px}.faq-cta .btn{width:100%}.foot-side{width:100%}}

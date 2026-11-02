@@ -1,0 +1,21 @@
+# Sabr Systems (Sabr AI)
+
+> Sabr Systems (Sabr AI) gets company data ready for AI and builds the AI agents that put it to work. Based in Frisco, TX (Dallas–Fort Worth), serving clients across the US. On-site meetings available.
+
+Key facts:
+- Services: 14-Day Data & AI Readiness Audit ($18,500 fixed, credited toward full setup); database field & relationship mapping; a live, read-only cross-database query layer (MySQL, PostgreSQL, SQL Server, Oracle and major cloud databases); a high-speed columnar analytical store for LLM queries; custom AI agents for reporting and business automation; self-serve AI data access; managed operations ($9,500/mo or $99,000/yr).
+- Four stages: Map & Define, Connect, Transfer, Automate. Clients whose data is already clean and documented start at Stage 3.
+- Turnkey setup: $75k–$140k, delivered in 6–10 weeks.
+- Trust: runs inside the client's private cloud; read-only access to production; mutual NDA before any schema review; fixed-price engagements.
+- Team: senior Data & AI engineers with S&P 500 experience; 25+ years collective software, database and infrastructure experience.
+- Service area: clients across the US, delivered remotely; on-site workshops and readouts across Dallas–Fort Worth (Frisco, Plano, McKinney, Dallas, Irving, Fort Worth, Arlington and nearby).
+- Contact: intake@sabrsystems.com · https://sabrsystems.com/
+
+## Pages
+- [Home](https://sabrsystems.com/): overview, before & after, the 4-stage architecture, Option A/B, AI agents, interactive demo, pricing, team and the audit request form
+- [Why AI Fails on Unready Data](https://sabrsystems.com/#problem)
+- [How It Works: 4-Stage Architecture](https://sabrsystems.com/#architecture)
+- [AI Agents & Business Automation](https://sabrsystems.com/#agents)
+- [Pricing](https://sabrsystems.com/#pricing)
+- [Book a 14-Day Audit](https://sabrsystems.com/#audit)
+- [FAQ](https://sabrsystems.com/faq.html)
